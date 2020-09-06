@@ -1,0 +1,25 @@
+.home{
+    position:relative;
+}
+
+.home_blog_title{
+    text-transform:uppercase;
+    padding:1rem 0;
+    font-weight:bold;
+    font-size:1.9rem;
+    position:relative;
+    margin-bottom:1rem;
+    
+
+
+    &::after{
+        content:"";
+        width:8rem;
+        height:3px;
+        background:#4E7DF1;
+        position:absolute;
+        bottom:0;
+        left:0;
+        
+    }
+}

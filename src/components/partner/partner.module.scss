@@ -1,0 +1,54 @@
+.partner{
+    position:relative;
+    overflow:hidden;
+    padding:2rem 0;
+    margin-top:2rem;
+}
+
+
+.h1{
+    font-size:1.6rem;
+    font-weight:bold;
+    margin-top:1rem;
+    text-transform:uppercase;
+}
+
+
+.row{
+    display:flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding:3rem 0;    
+}
+
+
+
+
+.logo{
+    width:10rem;
+    height:3rem;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin:.5rem;
+
+    @media(max-width:425px){
+        width:8rem;
+    }
+    
+    &_2{
+        background-image:url(../../img/logo_2.svg);
+    }
+    &_3{
+        background-image:url(../../img/logo_3.svg);
+    }
+    &_4{
+        background-image:url(../../img/logo_4.svg);
+    }
+    &_5{
+        background-image:url(../../img/logo_5.jpg);
+        margin:1rem 0rem 1rem .5rem;
+    }
+}

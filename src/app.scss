@@ -1,0 +1,56 @@
+
+*,
+*::after,
+*::before{
+	padding:0;
+	margin:0;
+	box-sizing: border-box;
+}
+
+
+
+html{
+    font-size:62.5%;  //100% -> 16px -> 1rem,10/16 ->  62.5% -> 10px;
+
+    @media (max-width:576px){  //sm => 576px  
+        font-size:56%;         //1rem 4.8px  
+    }
+    @media (min-width:768px){
+        font-size:58%;         //1rem 8px
+    }
+    @media (min-width:960px){
+        font-size:60%;      //1rem 9px
+    }
+    @media (min-width:1140px){ 
+        font-size:62.5%;          //1rem 12px
+    }
+}
+
+body{
+	font-size:1.4rem;
+	font-weight:400;
+    font-family:sans-serif;
+    background: #F8F8F8;
+}
+
+
+.container{
+
+    @media(max-width:992px){
+        max-width:100%;
+    }
+
+	@media(max-width:768px){
+		max-width:100% !important;
+	}
+
+	@media(max-width: 350px){
+		padding:.5rem;
+	}
+}
+
+button:visited,
+button:active,
+button{
+    outline:none !important;
+}

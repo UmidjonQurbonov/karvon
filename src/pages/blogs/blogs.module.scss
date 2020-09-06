@@ -1,0 +1,18 @@
+.blogs{
+    position:relative;
+    overflow:hidden;
+    padding:2rem 0;
+}
+
+
+.box{
+    position:relative;
+    overflow:hidden;
+    margin:3rem 0;
+    height:25vh;
+    
+
+    &_img{
+        width:100%;
+    }
+}

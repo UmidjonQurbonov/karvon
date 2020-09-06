@@ -1,0 +1,5 @@
+export { default as Home } from './home/home'
+export { default as Kiritish } from './kiritish/kiritish'
+export { default as Blogs } from './blogs/blogs'
+export { default as Blog } from './blog/blog'
+export { default as Radius } from './radius/radius'

@@ -1,0 +1,24 @@
+.bar{
+    display: flex;
+    flex-direction:column;
+    background:#ffffff;
+    box-shadow:0px 2px 5px rgba(black,0.1);
+    
+
+    &_link{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        color:rgb(73, 73, 73);
+        padding:1rem 2rem;
+        font-size:1.2rem;
+        font-weight:bold;
+        transition:all .3s;
+
+        &:hover{
+            text-decoration:none;
+            color:#4E7DF1;
+            box-shadow:inset 5px 0px 0px #4E7DF1;
+        }
+    }
+}

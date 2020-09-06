@@ -1,0 +1,136 @@
+.kiritish{
+    position:relative;
+    overflow:hidden;
+}
+
+.box{
+    margin:2rem 0;
+    height:75vh;
+    overflow:hidden;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.content{
+    background: #ffffff;
+    margin:2rem 0 6rem 0;
+    padding:2rem;
+}
+
+.input{
+    color:rgba(0,0,0,.8);
+    font-size:1.2rem;
+    padding:.9rem 1.5rem;
+    font-weight:bold;
+    border:1px solid rgba(0,0,0,.1);
+    position:relative;
+
+
+    &:focus{
+        box-shadow:none;
+        border:none;
+        box-shadow:inset 0px -2px 0px #28a745;
+    }
+    
+    &:focus:invalid{
+        box-shadow:inset 0px -2px 0px #ffc107;
+    }
+
+    &::placeholder{
+        font-size:1.2rem;
+        color:rgba(0,0,0,.2);
+    }
+}
+
+.label{
+    font-weight:bold;
+    font-size:1.5rem;
+    color:black;
+    margin-bottom:1rem;
+}
+
+.select{
+    display:block;
+    width:100%;
+    padding:.9rem 1.5rem;
+    font-size:1.2rem;
+    font-weight:bold;
+    border:1px solid rgba(0,0,0,.1);
+    
+    &:required:invalid{
+        color:rgba(0,0,0,.2);
+    }
+
+    &:focus{
+        outline:none;
+        box-shadow: none;
+    }
+    
+}
+
+
+.option{
+    font-size:1.2rem;
+    font-weight:bold;
+    padding:.3rem 0;
+    color:rgba(0,0,0,.8);
+    cursor:pointer !important;
+    
+}
+
+.disable{
+    display:none;
+}
+
+.file_input{
+    font-weight:bold;
+    color:rgba(0,0,0,.2);
+    text-align:left;
+    
+
+    &::after{
+        content:'Загрузить файл';
+        font-size:1.2rem !important;
+    }
+    
+    &::-webkit-file-upload-button{
+        display:none;
+    }
+
+    
+}
+
+
+
+.hisoblagich{
+    text-align:right;
+    color:rgba(0,0,0,.2);
+    display:block;
+    position:relative;
+    
+    &_span{
+        position:absolute;
+        right:1rem;
+        top:-3rem;
+    }
+}
+
+
+.button{
+    background:#4E7DF1;
+    border:none;
+    outline:none;
+    color:#ffffff;
+    padding:1rem 3.5rem;
+    font-size:1.3rem;
+    letter-spacing: .3px;
+    font-weight:bold;
+    border-radius:4px;
+    transition:all .3s;
+    cursor:pointer;
+
+    &:hover{
+        box-shadow:0px 2px 10px rgba(#4E7DF1,.8);
+    }
+}
