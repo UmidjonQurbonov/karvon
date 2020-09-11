@@ -14,7 +14,8 @@ const Radius = () => {
             </div>
         </div>
     );
-}
+};
+
 
 export default Radius;
 
