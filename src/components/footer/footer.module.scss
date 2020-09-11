@@ -31,7 +31,7 @@
 
     &_h1{
         color:#ffffff;
-        font-weight:bold;
+        font-weight:550;
         font-size:1.5rem;
         text-transform:capitalize;
         margin-bottom:1rem;
@@ -78,14 +78,14 @@
         &_h1{
             color:#ffffff;
             font-size:1.3rem;
-            font-weight:bold;
+            font-weight:550;
             margin-bottom:.2rem;
         }
 
         &_a{
             color:#4E7DF1;
             font-size:2rem;
-            font-weight:bold;
+            font-weight:600;
             letter-spacing: .6px;
 
             &:hover{
@@ -99,6 +99,7 @@
         color:rgba(255,255,255,.3);
         font-size:1.2rem;
         margin-top:1.5rem;
+        font-weight:500;
         
 
         &:hover{
@@ -138,7 +139,7 @@
 
     &_h1{
         font-size:1.7rem;
-        font-weight:bold;
+        font-weight:600;
         color:#ffffff;
         margin-bottom:0;
         
@@ -147,7 +148,7 @@
     &_p{
         color:rgba(255,255,255,.6);
         font-size:1.1rem;
-        font-weight:bold;
+        font-weight:500;
         margin:0;
     }
 
@@ -158,7 +159,7 @@
     &_i{
         display: inline-block;
         color:#ffffff;
-        font-size:2.6rem;
+        font-size:4rem;
     }
 
 
@@ -189,7 +190,7 @@
         background:#FEDB4D;
         color:black;
         font-size:1.3rem;
-        font-weight:bold;
+        font-weight:540;
 
         &:hover{
             text-decoration:none;
@@ -212,7 +213,7 @@
     margin-top:2rem;
     border-top:1px solid rgba(255,255,255,.1);
     font-size:1.2rem;
-    font-weight:bold;
+    font-weight:600;
     padding:2rem 0;
     color:rgba(255,255,255,.3);
 }

@@ -12,13 +12,13 @@
         color:rgb(73, 73, 73);
         padding:1rem 2rem;
         font-size:1.2rem;
-        font-weight:bold;
+        font-weight:600;
         transition:all .3s;
 
         &:hover{
             text-decoration:none;
             color:#4E7DF1;
-            box-shadow:inset 5px 0px 0px #4E7DF1;
+            box-shadow:inset 4px 0px 0px #4E7DF1;
         }
     }
 }

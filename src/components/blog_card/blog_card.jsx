@@ -12,7 +12,7 @@ const BlogCard = ({img, title, avtor, sana, kSoni, to}) => {
                     <img src={img} alt="" className={cx(st.card_img,'img-fluid w-100 h-100')}/>
                 </div>
                 <div className={cx(st.card_title)}>
-                    <h1 className={cx(st.card_title_h1)}>{title}</h1>
+                    <Link to={to} className={cx(st.card_title_link)}>{title}</Link>
                     <div className={cx(st.content)}>
                         <span className={cx(st.content_span)}>
                             <span className={cx(st.avtor)}>Автор:</span>{avtor}

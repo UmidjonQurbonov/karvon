@@ -1,3 +1,6 @@
+@import "~slick-carousel/slick/slick.css"; 
+@import "~slick-carousel/slick/slick-theme.css";
+
 
 *,
 *::after,
@@ -29,7 +32,7 @@ html{
 body{
 	font-size:1.4rem;
 	font-weight:400;
-    font-family:sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background: #F8F8F8;
 }
 
@@ -53,4 +56,13 @@ button:visited,
 button:active,
 button{
     outline:none !important;
+}
+
+
+.sign_in_show{
+    display:flex !important;
+}
+
+.sign_in_close{
+    display:none !important;
 }

@@ -13,14 +13,31 @@
 }
 
 
+.sign_in_button{
+    border:none;
+    outline:none;
+    display:inline-block;
+    background:transparent;
+    cursor:pointer;
+    padding:.3rem;
+    margin-left:1.5rem;
+
+    &:hover{
+        color:#4E7DF1;
+    }
+
+}
+
 .link{
     display:inline-block;
     color:black;
     padding:.3rem 1.5rem;
     font-size:1.2rem;
     border-right:1px solid rgba(0,0,0,.1);
+    font-weight:600;
     &:hover{
         text-decoration:none;
+        color:#4E7DF1;
     }
 
     &:first-child{
@@ -37,9 +54,6 @@
     display:inline-block;
     position:relative;
 
-    &:last-child{
-        padding:.3rem 0rem .3rem 1.5rem;
-    }
 }
 
 
@@ -85,4 +99,173 @@
         padding:.3rem 1rem;
         font-size:1.1rem;
     }
+}
+
+
+
+.sign_in{
+    position:fixed;
+    z-index: 20000;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+
+    &_dark{
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background:rgba(0,0,0,.8);
+        z-index: 20000;
+    }
+
+    &_box{
+        background: #ffffff;
+        padding:2rem 3rem;
+        border-radius:1rem;
+        min-width:45rem;
+        z-index: 20001;
+    }
+
+    
+    &_h1{
+        color:rgba(0,0,0,1);
+        font-size:1.9rem;
+        font-weight:650;
+        text-transform:uppercase;
+        margin-bottom:1.5rem;
+        text-align:center;
+    }
+
+    &_label{
+        font-size:1.5rem;
+        color:rgba(0,0,0,.8);
+        font-weight:550;
+    }
+
+    &_input{
+        padding:1rem 1.5rem;
+        font-size:1.3rem;
+        color:rgba(0,0,0,.8);
+        border:1px solid rgba(0,0,0,.2);
+
+        &:focus{
+            box-shadow:none;
+            border:none;
+            border:1px solid rgba(0,0,0,0);
+            box-shadow:inset 0px -3px 0px #28a745;
+        }
+
+        &:focus:invalid{
+            box-shadow:inset 0px -3px 0px #ffc107;
+        }
+
+        &::placeholder{
+            color:rgba(0,0,0,.3);
+        }
+    }
+
+    &_but{
+        text-transform: uppercase;
+        font-size:1.3rem;
+        font-weight:500;
+        color:#ffffff;
+        background:#4E7DF1;
+        padding:.7rem 4rem;
+        display:block;
+        margin:2rem auto;
+        border-radius:2px;
+        border:none;
+        outline:none;
+        cursor:pointer;
+
+        &:hover{
+            color:#ffffff;
+        }
+    }
+
+    &_content{
+        display:flex;
+        justify-content: space-between;
+        color:rgba(0,0,0,.8);
+        font-size:1.15rem;
+        padding-top:1rem;
+    }
+
+    .sign_up_link{
+        color:#4E7DF1;
+        margin-left:.6rem;
+
+        &:hover{
+            text-decoration:none;
+            color:#ffc107;
+        }
+    }
+
+    .password_forget{
+        color:#4E7DF1;
+
+        &:hover{
+            text-decoration:none;
+            color:#ffc107;
+        }
+    }
+
+
+    @media(max-width:440px){
+        &_box{
+            min-width:35rem;
+        }
+
+        &_content{
+            flex-direction:column;
+            align-items: center;
+            line-height: 2;
+        }
+    }
+
+    @media(max-width:330px){
+        &_box{
+            min-width:30rem;
+        }
+    }
+    @media(max-width:280px){
+        &_box{
+            min-width:25rem;
+        }
+    }
+
+    .close_button{
+        position:absolute;
+        font-size:3rem;
+        top:15%;
+        right:15%;
+        color:rgba(255,255,255, .7);
+        cursor:pointer;
+        z-index: 20001;
+        
+        &:hover{
+            color:#dc3545;
+        }
+
+        @media(max-width:730px){
+            top:5%;
+            left:5%;
+        }
+    }
+
+
+}
+
+.show{
+    display:flex !important;
+}
+
+.close{
+    display:none;
 }

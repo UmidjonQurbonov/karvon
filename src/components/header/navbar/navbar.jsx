@@ -10,9 +10,9 @@ const Navbar = () => {
     const links = [
         {text:'home', to:'/'},
         {text:'online market', to:'/market'},
-        {text:'online service', to:'/service'},
-        {text:'reyting', to:'/reyting'},
-        {text:'our biznes', to:'/our-biznes'},
+        {text:'online services', to:'/service'},
+        {text:'rating', to:'/rating'},
+        {text:'my business', to:'/my-business'},
         {text:'blog', to:'/blogs'},
         {text:'contact', to:'/contact'}
     ]
@@ -27,7 +27,7 @@ const Navbar = () => {
         <div className={cx(st.navbar)}>
             <div className={cx(st.row, 'container')}>
                 <div className={cx(st.col)}>
-                    <Link className={cx(st.categori)} to="/categories">
+                    <Link className={cx(st.categori)} to="/all-categories">
                         <span className={cx(st.categori_text)}>All Categories</span>
                         <span className={cx(st.categori_button)}></span>
                     </Link>

@@ -1,0 +1,54 @@
+.business{
+    position: relative;
+    overflow:hidden;
+    margin:6rem 0;
+    background: #ffffff;
+    box-shadow:0px 2px 5px rgba(0,0,0, .2);
+    padding:2rem;
+}
+
+
+.check_box{
+    display:flex;
+    align-items: center;
+    margin:2rem 0;
+    justify-content: center;
+}
+
+.check{
+    display:none;
+    
+    
+    &_style{
+        cursor:pointer;
+        margin:0;
+        margin-right:2rem;
+        border-radius:50%;
+        position: relative;
+        padding:1.2rem;
+
+        &::after{
+            content:'';
+            width:160%;
+            height:160%;
+            position:absolute;
+            top:50%;
+            left:50%;
+            border:3px solid #4E7DF1;
+            transform:translate(-50%, -50%);
+            border-radius:50%;
+        }
+    }
+
+    &_p{
+        margin:0;
+        padding:0;
+        color:rgba(0,0,0, .9);
+        font-size:1.5rem;
+        font-weight:bold;
+    }
+}
+
+.check:checked + .check_style{
+    background:#4E7DF1;
+}

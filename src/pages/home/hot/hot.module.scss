@@ -41,12 +41,34 @@
     bottom:5%;
     position:absolute;
     z-index: 10;
-    
+    padding:0 1rem;
 
     &_h1{
         color:#ffffff;
         font-weight:bold;
         font-size:1.8rem;
+        display:block;
+        transition:all .3s;
+
+        &:hover{
+            text-decoration:none;
+            color:#FEDB4D;
+            
+        }
+    }
+
+    &_h2{
+        color:#ffffff;
+        font-weight:bold;
+        font-size:1.3rem;
+        display:block;
+        transition:all .3s;
+
+        &:hover{
+            text-decoration:none;
+            color:#FEDB4D;
+            
+        }
     }
 
     &_link{
@@ -58,12 +80,7 @@
         border-radius:2rem;
         font-weight:bold;
         font-size:1.3rem;
-        transition:all .3s;
-        &:hover{
-            text-decoration:none;
-            color:#4E7DF1;
-            
-        }
+        
     }
 }
 

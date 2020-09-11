@@ -17,7 +17,7 @@
 .logo{
     color:rgb(0,0,0);   
     font-size:4rem;
-    font-weight:bold;
+    font-weight:700;
 
     &:hover{
         text-decoration:none;
@@ -48,7 +48,7 @@
 
     .number{
         font-size:2.2rem;
-        font-weight:bold;
+        font-weight:600;
     }
 
     @media(max-width:992px){

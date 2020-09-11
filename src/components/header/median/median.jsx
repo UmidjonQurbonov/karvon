@@ -26,7 +26,7 @@ const Median = () => {
             <div className={cx('container', st.row)}>
                 <div className={cx(st.logo_content)}>
                     <Link className={cx(st.logo)} to='/'>
-                        Elezone
+                        Karvon
                     </Link>
                 </div>
                 <div className={cx(st.search_content)}>

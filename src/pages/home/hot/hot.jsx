@@ -20,12 +20,12 @@ const Hot = () => {
                         <div className={cx(st.box)}>
                             <img src={service} alt="" className={cx('img-fluid', st.img)}/>
                             <div className={cx(st.content)}>
-                                <Link to="" className={cx(st.content_link)}>
+                                <h1 to="" className={cx(st.content_link)}>
                                     Сервисы
-                                </Link>
-                                <h1 className={cx(st.content_h1)}>
-                                    "ИТ-ГРАД" представил партнерскую программу для физических лиц
                                 </h1>
+                                <Link to="" className={cx(st.content_h1)}>
+                                    "ИТ-ГРАД" представил партнерскую программу для физических лиц
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -35,8 +35,11 @@ const Hot = () => {
                                 <div className={cx(st.box)}>
                                     <img src={ind_1} alt="" className={cx('img-fluid', st.img)}/>
                                     <div className={cx(st.content, st.content_2)}>
-                                        <Link to="" className={cx(st.content_link)}>
+                                        <h1 className={cx(st.content_link)}>
                                             Промышленность
+                                        </h1>
+                                        <Link className={cx(st.content_h2)} to="">
+                                            "ИТ-ГРАД" представил партнерскую программу для физических лиц
                                         </Link>
                                     </div>
                                 </div>
@@ -45,8 +48,11 @@ const Hot = () => {
                                 <div className={cx(st.box)}>
                                     <img src={ind_2} alt="" className={cx('img-fluid', st.img)}/>
                                     <div className={cx(st.content, st.content_2)}>
-                                        <Link to="" className={cx(st.content_link)}>
+                                        <h1 className={cx(st.content_link)}>
                                             Промышленность
+                                        </h1>
+                                        <Link to="" className={cx(st.content_h2)}>
+                                            "ИТ-ГРАД" представил партнерскую программу для физических лиц
                                         </Link>
                                     </div>
                                 </div>
@@ -57,8 +63,11 @@ const Hot = () => {
                                 <div className={cx(st.box)}>
                                     <img src={ind_3} alt="" className={cx('img-fluid', st.img)}/>
                                     <div className={cx(st.content, st.content_2)}>
-                                        <Link to="" className={cx(st.content_link)}>
+                                        <h1  className={cx(st.content_link)}>
                                             Промышленность
+                                        </h1>
+                                        <Link to="" className={cx(st.content_h2)}>
+                                            "ИТ-ГРАД" представил партнерскую программу для физических лиц
                                         </Link>
                                     </div>
                                 </div>
@@ -67,8 +76,11 @@ const Hot = () => {
                                 <div className={cx(st.box)}>
                                     <img src={ind_4} alt="" className={cx('img-fluid', st.img)}/>
                                     <div className={cx(st.content, st.content_2)}>
-                                        <Link to="" className={cx(st.content_link)}>
+                                        <h1 className={cx(st.content_link)}>
                                             Промышленность
+                                        </h1>
+                                        <Link to="" className={cx(st.content_h2)}>
+                                            "ИТ-ГРАД" представил партнерскую программу для физических лиц
                                         </Link>
                                     </div>
                                 </div>

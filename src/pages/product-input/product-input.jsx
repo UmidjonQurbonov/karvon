@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import st from './kiritish.module.scss'
+import st from './product-input.module.scss'
 import cx from 'classnames'
 
 import img from '../../img/atlas.jpg'
 
-const Kiritish = () => {
+const ProductInput = () => {
 
     const [text, setText] = useState('');
     const [disabled, setDisabled] = useState(false);
@@ -103,4 +103,4 @@ const Kiritish = () => {
     );
 }
 
-export default Kiritish;
+export default ProductInput;

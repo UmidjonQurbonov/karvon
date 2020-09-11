@@ -1,0 +1,68 @@
+.sign_up{
+    position:relative;
+    overflow:hidden;
+    padding:2rem 0;
+
+    &_h1{
+        font-size:2.5rem;
+        font-weight:600;
+        margin:2rem 0;
+        text-align:center;
+    }
+
+    &_h4{
+        font-size:1.3rem;
+        font-weight:500;
+        color:rgba(0,0,0,.4);
+        text-align:center;
+        padding-bottom:1rem;
+    }
+}
+
+
+.card{
+    box-shadow:0px 2px 5px rgba(0,0,0,.2);
+    padding:2rem 3rem;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    cursor:pointer;
+    user-select: none;
+    position:relative;
+    height:100%;
+    
+    &_icon{
+        font-size:5rem;
+        color:#4E7DF1;
+        padding-bottom:1rem;
+    }
+
+    &_h5{
+        font-size:1.6rem;
+        font-weight:600;
+        padding-bottom:1rem;
+        text-align:center;
+    }
+
+    .card_p{
+        text-align:center;
+        font-size:1.3rem;
+        font-weight:500;
+        color:rgba(0,0,0,.4);
+    }
+
+}
+
+.blue{
+    background:#4E7DF1;
+    .card_icon{
+        color: #ffffff;
+    }
+    .card_h5{
+        color: #ffffff;
+    }
+    .card_p{
+        color: #ffffff;
+    }
+}
+
