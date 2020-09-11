@@ -1,0 +1,19 @@
+.brends {
+  font-weight: bold;
+  font-size: 1.8rem;
+
+  &_head {
+    background-color: white;
+    border-top: 1px solid #E7E7E7;
+    padding: .5rem;
+
+    &:hover {
+      background: linear-gradient(to right, blue 1%, white 1%);
+    }
+  }
+
+  &_body {
+    display: flex;
+    align-items: center;
+  }
+}

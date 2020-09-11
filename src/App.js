@@ -4,7 +4,7 @@ import { Layout } from './hoc';
 import { Switch, Route } from 'react-router-dom';
 
 
-import { Home, ProductInput, Blogs, Blog, SignUp, MyBusiness, Categories, Categori } from './pages'
+import { Home, ProductInput, Blogs, Blog, SignUp, MyBusiness, Categories, Categori, Product } from './pages'
 
 class App extends Component {
 	constructor(props){
@@ -26,6 +26,7 @@ class App extends Component {
                         <Route path='/blogs/:id'  component={Blog} />
                         <Route path='/my-business'  component={MyBusiness} />
                         <Route path='/sign-up' component={SignUp} />
+                        <Route path='/products/:id' exact component={Product} />
                         <Route path='/all-categories'  component={Categories} />
                         <Route path='/categori'  component={Categori} />
                     </Layout>

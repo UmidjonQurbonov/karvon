@@ -12,7 +12,7 @@ import imzo from '../../../img/imzo.jpg'
 const Reyting = () => {
     
     const cardDate = [
-        {img:radius, to:"", title:'Radius.uz - Сеть магазинов электроники, бесплатная доставка, рассрочка'},
+        {img:radius, to:"", title:'MyBusiness.uz - Сеть магазинов электроники, бесплатная доставка, рассрочка'},
         {img:media, to:"", title:'MediaPark - Сеть магазинов электроники, бесплатная доставка, рассрочка'},
         {img:imzo, to:"", title:'IMZO - Сеть магазинов электроники, бесплатная доставка, рассрочка'}
     ]
