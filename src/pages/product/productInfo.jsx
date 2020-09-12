@@ -4,10 +4,10 @@ import s from './productInfo.module.scss'
 import cx from 'classnames'
 import {NavLink} from "react-router-dom";
 
-import header_logo_img from './../../img/product_header_logo.png';
-import carouselImg from './../../img/p.jpg'
-import carouselImg1 from './../../img/product_carousel_img.jpg'
-import carouselImg2 from './../../img/product_carousel_img2.jpg'
+import header_logo_img from './../../img/innovation.jpg';
+import carouselImg from './../../img/atlas.jpg'
+import carouselImg1 from './../../img/aksi_1.jpg'
+import carouselImg2 from './../../img/aksi_2.jpg'
 import BrendsProduct from "./product_brends/brendsProduct";
 
 const Product = () => {

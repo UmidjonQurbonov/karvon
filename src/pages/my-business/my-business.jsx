@@ -4,13 +4,13 @@ import cx from 'classnames'
 
 import radius from '../../img/radius2.jpg';
 import comment from '../../img/comment.svg';
-import productImg from './../../img/radius_product.jpg'
+import productImg from './../../img/radius.jpg'
 import ProductRadius from "./product_radius/product_radius.jsx";
-import img from "../../img/radius_usb.png";
-import img1 from "../../img/radius_usb.png";
+import img from "../../img/radius1.jpg";
+import img1 from "../../img/radius2.jpg";
 import SidebarNews from "./sidebar/sidebarNews";
 import { NavLink} from "react-router-dom";
-import index from "../../components/header/header";
+
 
 const MyBusiness = () => {
 
