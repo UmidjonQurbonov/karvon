@@ -8,13 +8,13 @@ import  logo1 from '../../img/logo_1.svg'
 import  logo2 from '../../img/logo_2.svg'
 import  logo3 from '../../img/logo_3.svg'
 import  logo4 from '../../img/logo_4.svg'
-import  logo5 from '../../img/logo_5.jpg'
+
 import Slider from 'react-slick'
 
 const Partner = () => {
 
     const logos = [
-        logo1, logo2, logo3, logo4, logo5
+        logo1, logo2, logo3, logo4
     ]
 
 
@@ -30,9 +30,7 @@ const Partner = () => {
       };
 
       const logo = logos.map((i, index) => (
-        <div className={cx(st.box)} key={index}>
-            <img src={i} alt="" className={cx(st.logo, 'img-fluid')}/> 
-        </div>
+        <img src={i} alt="" className={cx(st.logo, 'img-fluid')} key={index}/> 
       ))
     
 

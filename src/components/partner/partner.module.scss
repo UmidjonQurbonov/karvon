@@ -16,13 +16,19 @@
 
 .box{
     position:relative;
-    overflow:hidden;
-    margin:0 2rem;
-    
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo{
-    height:20rem;
-    padding:0 3rem;
+    padding:0 2rem;
+    
+    
+    @media(max-width:400px){
+        height:20rem;
+        padding:0 1rem;
+        margin:0 2rem;
+    }
 }
 
