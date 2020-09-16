@@ -11,7 +11,7 @@ const Footer = () => {
         <div className={cx(st.footer)}>
             {podpis()}
             <div className={cx(st.main)}>
-                <div className={cx('container')}>
+                <div className={cx('container px-5 px-md-0')}>
                     <div className={cx('row')}>
                         {location()}
                         {kompaniya()}              

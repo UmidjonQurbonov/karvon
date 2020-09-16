@@ -2,18 +2,14 @@ import React, { Component } from 'react'
 import './app.scss';
 import { Layout } from './hoc';
 import { Switch, Route } from 'react-router-dom';
-
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 import { Home, ProductInput, Blogs, Blog, SignUp, MyBusiness, Categories, Categori, Product } from './pages'
 
 class App extends Component {
-	constructor(props){
-        super(props);
-
-        this.state = {
+	state = {
             
         }
-	}
 
 	render(){
 		return(

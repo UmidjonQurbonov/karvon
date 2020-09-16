@@ -18,7 +18,6 @@
     outline:none;
     display:inline-block;
     background:transparent;
-    cursor:pointer;
     padding:.3rem;
     margin-left:1.5rem;
 
@@ -186,6 +185,12 @@
 
         &:hover{
             color:#ffffff;
+        }
+
+        &:disabled{
+            background: #aaa;
+            color: #fff;
+            cursor: no-drop;
         }
     }
 

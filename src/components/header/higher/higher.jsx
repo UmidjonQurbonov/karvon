@@ -3,11 +3,36 @@ import st from './higher.module.scss'
 import cx from 'classnames'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
-
+import { authApi } from '../../../service/authService';
 
 const Higher = () => {
 
     const [toggle, setToggle] = useState(false);
+    const [data , setData] = useState({
+        phone : "",
+        password : ""
+    })
+
+    const [requestProgress , setRequestProgress ] = useState({
+        isRequest : false,
+        isError : false
+    })
+
+
+    const login = e => {
+        e.preventDefault();
+        setRequestProgress( prev => ({...prev , isRequest : true}))
+        authApi.login(data).then( res => {
+            const { token } = res.data;
+            localStorage.setItem("token",token);
+            setRequestProgress({ isRequest : false , isError : false })
+            setToggle(false);
+            window.location.reload();
+        } , err => {
+            setRequestProgress({ isRequest : false , isError : true })
+            console.log(err)
+        });
+    }
 
     return (
         <div className={cx(st.higher)}>
@@ -51,16 +76,25 @@ const Higher = () => {
                 <div className={cx(st.sign_in_dark)} onClick={() => setToggle(false)}></div>
                 <div className={cx(st.sign_in_box)}>
                     <h1 className={cx(st.sign_in_h1)}>войти в систему </h1>
-                    <form>
+                    <form onSubmit={ login }>
                         <div className={cx('form-group')}>
-                            <label className={cx(st.sign_in_label)}>Логин</label>
-                            <input type="text" className={cx(st.sign_in_input, 'form-control')} placeholder="Введите ваш логин"  required/>
+                            <label className={cx(st.sign_in_label)}>Номер телефона</label>
+                            <input onChange={ e => setData({...data , phone : e.target.value })} type="tel" className={cx(st.sign_in_input, 'form-control')} placeholder="+998XXZZZZZZZ"  required/>
                         </div>
                         <div className={cx('form-group')}>
                             <label className={cx(st.sign_in_label)}>Пароль</label>
-                            <input type="password" className={cx(st.sign_in_input, 'form-control')} placeholder="Введите ваш пароль"  required/>
+                            <input onChange={ e => setData({...data , password : e.target.value })} type="password" className={cx(st.sign_in_input, 'form-control')} placeholder="Введите ваш пароль"  required/>
                         </div>
-                        <input type="submit" value="вход" className={cx(st.sign_in_but)} onClick={() => setToggle(false)} />
+                        {
+                            requestProgress.isError && 
+                            <div className="alert alert-danger">
+                                <i className="fa fa-fw fa-exclamation-triangle"></i>
+                                <strong>  Ошибка ! </strong> Номер телефона или пароль введены неверно
+                            </div>
+                        }
+                        <button disabled={ requestProgress.isRequest } type="submit" className={cx(st.sign_in_but)} >
+                            вход { requestProgress.isRequest && <i className="fa fa-fw fa-circle-notch fa-spin"></i> }
+                        </button>
                     </form>
                     <div className={cx(st.sign_in_content)}>
                         <div>

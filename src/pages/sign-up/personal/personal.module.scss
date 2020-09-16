@@ -91,4 +91,9 @@
     &:hover{
         background:#47F0F0;       
     }
+    &:disabled{
+        background: #aaa;
+        color: #fff;
+        cursor: no-drop;
+    }
 }

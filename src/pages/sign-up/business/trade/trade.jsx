@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import st from './trade.module.scss'
 import cx from 'classnames'
-import {authAPI} from "../../../../api/api";
 
 
 class Trade extends Component {
@@ -9,30 +8,6 @@ class Trade extends Component {
     RequestActionEnum = {
         PERSONAL: 'personal',
         BUSINESS: 'business'
-    }
-    handleSubmit = e => {
-        e.preventDefault();
-
-        const data = {
-            name: this.name,
-            phone: this.phone,
-            password: this.password,
-            email: this.email,
-            // confirm_password: this.confirmPassword,
-            type: this.RequestActionEnum.BUSINESS
-        }
-        authAPI.register(
-            data.name, data.phone, data.email, data.password, data.type,
-            {withCredentials: true}
-        ).then(
-            res => {
-                console.log(res);
-            }
-        ).catch(
-            err => {
-                console.log(err);
-            }
-        )
     }
 
     render() {
