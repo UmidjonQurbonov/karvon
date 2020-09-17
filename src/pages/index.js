@@ -7,4 +7,5 @@ export { default as Product } from './product/productInfo'
 export { default as SignUp } from './sign-up/sign-up'
 export { default as Categories } from './categories/categories'
 export { default as Categori } from './categori/categori'
-
+export { default as Reset } from './resetpassword/reset';
+export { default as Entercode } from './entercode/entercode';

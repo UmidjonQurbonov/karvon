@@ -1,0 +1,101 @@
+.entercode{
+    max-width: 500px ;    
+    margin: 0px auto;
+    padding: 0px 30px;
+    padding-bottom: 20px;
+
+    &_title{
+        text-align: center;
+        margin: 10px auto;
+        color: #4e7cf1c7;
+    }
+
+    &_icon{
+        width: 100px  ;
+        margin: 0px auto  ;
+        margin-top: 30px;
+    }
+    &_description{
+        text-align: center;
+    }
+
+    
+    &_input{
+        padding: 10px 20px;
+        @media(max-width:500px){
+            padding: 10px 0px;
+        }
+        i{
+            font-size: 20px;
+            color: #bbb;
+            display: flex;
+            width: 50px;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            border: 1px solid lightgray;
+            border-radius: 0px 100px 100px 0px;
+            transform: rotateY(180deg);
+        }
+        input{
+            height: 50px;
+            box-shadow: none !important;
+            border: 1px solid lightgray !important;
+            border-radius: 0px 100px 100px 0px;
+            border-left: none !important;
+            font-size: 14px;
+            background : white !important;
+            color: gray;
+            
+            &::placeholder{
+                color: lightgray !important;
+            }
+        }
+        button{
+            border: none !important;
+            background: white !important;
+            cursor: pointer;
+            i{
+                border-radius: 100px 0px 0px 100px;
+                border-right: none !important;
+                background: white !important;
+            }
+        }
+        
+    }
+    
+    &_button{
+        height: 50px;
+        width: fit-content;
+        padding: 0px 20px;
+        border: none !important;
+        background : linear-gradient(135deg, #4e7cf1c7 ,  #4cf1c7) ;
+        font-size: 16px;
+        border-radius: 100px;
+        margin: 20px auto;
+        transition: 0.2s;
+        display: block;
+        cursor: pointer;
+        color: white;
+
+        &:active{
+            transform: scale(0.9);
+        }
+
+        &:hover{
+            background : linear-gradient(135deg,   #4cf1c7 ,#4e7cf1c7);
+        }
+
+        &:disabled{
+            cursor: no-drop;
+            background: #aaa;
+        }
+    }
+}
+
+.padding{
+    padding: 0px 20px;
+    @media(max-width:500px){
+        padding: 0px;
+    }
+}

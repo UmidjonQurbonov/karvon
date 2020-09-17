@@ -1,12 +1,15 @@
 import React from 'react'
 import st from './aksiya.module.scss'
 import cx from 'classnames'
+import { connect } from 'react-redux';
+import { userActions } from '../../../redux/actions';
 
 import {BlogCard} from '../../../components'
 
 import img1 from '../../../img/aksi_1.jpg'
 import img2 from '../../../img/aksi_2.jpg'
 import img3 from '../../../img/aksi_3.jpg'
+import { useEffect } from 'react';
 
 const Aksiya = () => {
 
@@ -32,4 +35,14 @@ const Aksiya = () => {
     );
 }
 
-export default Aksiya;
+
+
+
+const mstp = state => (state);
+const mdtp = dispatch => ({
+    isLoggedIn : () => {
+        dispatch(userActions.loggedIn())
+    }
+})
+
+export default connect(mstp,mdtp)(Aksiya);

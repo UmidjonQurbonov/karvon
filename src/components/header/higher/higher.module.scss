@@ -1,7 +1,6 @@
 .higher{
     position:relative;
     background:#E7E7E7;
-    overflow:hidden;
     padding:.7rem 0;
 }
 
@@ -18,6 +17,7 @@
     outline:none;
     display:inline-block;
     background:transparent;
+    cursor : pointer;
     padding:.3rem;
     margin-left:1.5rem;
 
