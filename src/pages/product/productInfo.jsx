@@ -54,7 +54,7 @@ const Product = () => {
                 <div className={cx(s.carouselcard, "d-block w-100")}>
                     <img className={cx(s.carouselimg)} height={'250px'} src={item.img} alt="First slide"/>
                 </div>
-            </div>) : (<div className={cx(s.carouselimg, "carousel-item")} height={'250px'} key={index}>
+            </div>) : (<div className={cx("carousel-item")} height={'250px'} key={index}>
                 <div className={cx(s.carouselcard, "d-block w-100")}>
                     <img className={cx(s.carouselimg)} height={'250px'} src={item.img} alt="First slide"/>
                 </div>
@@ -120,7 +120,7 @@ const Product = () => {
                    </div>
                </div>
                <div className={cx('col-2')}>
-                   <div className={cx(s.body_products_cost)}>{item.cost}</div>
+                   <div className={cx(s.body_products_cost)}>{costView(item.cost)}</div>
                </div>
                <div className={cx('col-1 d-flex flex-row-reverse')}>
                    <div>
@@ -207,20 +207,20 @@ const Product = () => {
                                     <div className={cx(s.product_connect_body, 'bg-white')}>
                                         <h6 className={cx('text-uppercase')}>Информация о прадавце</h6>
                                         <div className={cx('row')}>
-                                            <div className={cx(s.product_connect_body_titr, 'col-6')}>
+                                            <div className={cx(s.product_connect_body_titr, 'col-5')}>
                                                 Телефон:
                                                 <a href="tel:+998932099924">
                                                     +99891 791 11 22
                                                 </a>
                                             </div>
-                                            <div className={cx(s.product_connect_body_titr, 'col-6')}>
+                                            <div className={cx(s.product_connect_body_titr, 'col-7')}>
                                                 Электронная почта:
                                                 <a href="#">info@doini.uz</a>
                                             </div>
-                                            <div className={cx(s.product_connect_body_titr, 'col-6')}>
+                                            <div className={cx(s.product_connect_body_titr, 'col-5')}>
                                                 Факс: <a href="tel:+998714122336">+998714122336</a>
                                             </div>
-                                            <div className={cx(s.product_connect_body_titr, 'col-6')}>
+                                            <div className={cx(s.product_connect_body_titr, 'col-7')}>
                                                 <a href="https://esavdo.uz">www.esavdo.uz</a>
                                             </div>
                                             <div className={cx(s.product_connect_body_titr, 'col-12 text-uppercase')}>
