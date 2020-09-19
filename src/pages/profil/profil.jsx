@@ -68,7 +68,7 @@ const Profil = () => {
                                         <div className={cx(st.copied)}>
                                             <p className={cx(st.copied_p)}>Do'stlaringizni taklif qiling va bonuslarga ega bo'ling!</p>
                                             <div className={cx('input-group')}>
-                                                <input type="text" value="https://karvon.uz/user/refeal/20112" className={cx('form-control', st.copied_input)} />
+                                                <input type="text" value="https://karvon.uz/user/refeal/20112" className={cx('form-control', st.copied_input)}/>
                                                 <button className={cx(st.copied_button, 'input-group-append')}>
                                                     <i className={cx('far fa-copy', st.copied_icon)}></i>
                                                 </button>
