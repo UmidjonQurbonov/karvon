@@ -4,7 +4,7 @@ import { Layout } from './hoc';
 import { Switch, Route } from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
-import { Home, ProductInput, Blogs, Blog, SignUp, MyBusiness, Categories, Categori, Product , Reset, Entercode } from './pages'
+import { Home, ProductInput, Blogs, Blog, SignUp, MyBusiness, Categories, Categori, Product , Reset, Profil, ProfilChange, Entercode } from './pages'
 
 class App extends Component {
 	state = {
@@ -25,6 +25,8 @@ class App extends Component {
                         <Route path='/products/:id' exact component={Product} />
                         <Route path='/all-categories'  component={Categories} />
                         <Route path='/categori'  component={Categori} />
+                        <Route path='/profile' component={Profil} />
+                        <Route path='/profile-change' component={ProfilChange} />
                         <Route path='/resetpassword' component={Reset}/>
                         <Route path='/entercode' component={Entercode}/>
                     </Layout>
