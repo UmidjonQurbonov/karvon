@@ -1,0 +1,149 @@
+.change{
+    position: relative;
+    padding:3rem 0;
+    overflow:hidden;
+
+
+    &_card{
+        background: #ffffff;
+        width:100%;
+        padding:2.5rem;
+        box-shadow:0px 2px 10px rgba(0,0,0, .1);
+    }
+}
+
+
+.header{
+    border-bottom:3px solid rgba(0,0,0, .1);
+    padding-bottom:1rem;
+    position:relative;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+
+    @media(max-width:300px){
+        flex-direction:column;
+    }
+
+    &::after{
+        content:'';
+        position:absolute;
+        width:7rem;
+        height:3px;
+        background:#4E7DF1;
+        bottom:-3px;
+        left:0;
+    }
+
+    &_title{
+        text-transform:uppercase;
+        font-size:1.5rem;
+        font-weight:800;
+        position:relative;
+    }
+
+    &_button{
+        background:#4E7DF1;
+        border:none;
+        outline:none;
+        cursor:pointer;
+        padding:.7rem 2.5rem;
+        color:#ffffff;
+        font-weight:600;
+        font-size:1.3rem;
+        border-radius:3px;
+    }
+}
+
+
+
+.for{
+    margin-left:2rem;
+    flex-grow:1;
+    
+
+    &_label{
+        font-size:1.4rem;
+        font-weight: 600;
+        color:rgba(0,0,0, 1);
+}
+
+    &_input{
+        font-size:1.4rem;
+        padding:.7rem 1rem;
+        border:none;
+        background:#f1f2f3;
+        font-weight:500;
+        color:rgba(0,0,0, .3);
+        border:1px solid transparent;
+
+        &:focus{
+            box-shadow:none;
+            outline:none;
+            border:1px solid #e7cff5;
+        }
+    }
+}
+
+
+.content{
+    position:relative;
+    display:flex;
+    flex-direction:row;
+    margin-top:2rem;
+    
+    @media(max-width:600px){
+        flex-direction:column;
+        align-items: center;
+
+        .for{
+            margin-left:0;
+        }
+
+        
+    }
+
+    .image{
+        width:18rem;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow:0px 0px 5px rgba(0,0,0, .1);
+        position:relative;
+        overflow:hidden;
+        flex-shrink:0;
+        max-height:25rem;
+        
+        @media(max-width:600px){
+            width:100%;
+        }
+
+        &_img{
+            height:100%;
+        }
+
+        &_input{
+            display:none;
+            
+        }
+
+        &_label{
+            font-size:2.5rem;
+            margin-bottom:0;
+            background:rgba(0,0,0, .5);
+            display:flex;
+            width:100%;
+            flex-direction:row;
+            justify-content:center;
+            padding:.5rem 0;
+            position:absolute;
+            bottom:0;
+            cursor:pointer;
+        }
+
+        &_icon{
+            color:#ffffff;
+        }
+    }
+}

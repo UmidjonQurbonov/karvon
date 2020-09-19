@@ -7,4 +7,6 @@ export { default as Product } from './product/productInfo'
 export { default as SignUp } from './sign-up/sign-up'
 export { default as Categories } from './categories/categories'
 export { default as Categori } from './categori/categori'
+export { default as Profil } from './profil/profil'
+export { default as ProfilChange } from './profil-change/profil-change'
 
