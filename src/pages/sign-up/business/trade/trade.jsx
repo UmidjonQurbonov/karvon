@@ -1,9 +1,16 @@
-import React from 'react'
+import React, {Component} from 'react'
 import st from './trade.module.scss'
 import cx from 'classnames'
 
 
-const Trade = () => {
+class Trade extends Component {
+
+    RequestActionEnum = {
+        PERSONAL: 'personal',
+        BUSINESS: 'business'
+    }
+
+    render() {
     return (
         <div className={cx(st.trade)}>
             <form>
@@ -11,19 +18,25 @@ const Trade = () => {
                     <div className={cx('col-md-6 my-2')}>
                         <div className={cx('form-group')}>
                             <label className={cx(st.label)}>Имя пользователя</label>
-                            <input type="text" className={cx(st.input, 'form-control')} placeholder="Напишите здесь" required/>  
+                            <input type="text" className={cx(st.input, 'form-control')} placeholder="Напишите здесь" required
+                                   onChange={e=> this.name = e.target.value}
+                            />
                         </div>
                     </div>
                     <div className={cx('col-md-6 my-2')}>
                         <div className={cx('form-group')}>
                             <label className={cx(st.label)}>Электронная почта</label>
-                            <input type="email" className={cx(st.input, 'form-control')} placeholder="Напишите здесь" required/>  
+                            <input type="email" className={cx(st.input, 'form-control')} placeholder="Напишите здесь" required
+                                   onChange={e=> this.email = e.target.value}
+                            />
                         </div>
                     </div>
                     <div className={cx('col-md-6 my-2')}>
                         <div className={cx('form-group')}>
                             <label className={cx(st.label)}>Номер телефона</label>
-                            <input type="text" className={cx(st.input, 'form-control')} placeholder="Напишите здесь" required/>  
+                            <input type="text" className={cx(st.input, 'form-control')} placeholder="Напишите здесь" required
+                                   onChange={e=> this.phone = e.target.value}
+                            />
                         </div>
                     </div>
                     <div className={cx('col-md-6 my-2')}>
@@ -62,7 +75,9 @@ const Trade = () => {
                     <div className={cx('col-md-6 my-2')}>
                         <div className={cx('form-group')}>
                             <label className={cx(st.label)}>Положение дел</label>
-                            <select className={cx(st.select)} required>
+                            <select className={cx(st.select)} required
+
+                            >
                                 <option className={cx(st.select_selected)} value="">Введите</option>
                                 <option value="" className={cx(st.option)}>Производитель</option>
                                 <option value="" className={cx(st.option)}>Продавец</option>
@@ -84,13 +99,17 @@ const Trade = () => {
                     <div className={cx('col-md-6 my-2')}>
                         <div className={cx('form-group')}>
                             <label className={cx(st.label)}>Пароль</label>
-                            <input type="password" className={cx(st.input, 'form-control')} placeholder="Введите ваш пароль" required/>  
+                            <input type="password" className={cx(st.input, 'form-control')} placeholder="Введите ваш пароль" required
+                                   onChange={e=> this.password = e.target.value}
+                            />
                         </div>
                     </div>
                     <div className={cx('col-md-6 my-2')}>
                         <div className={cx('form-group')}>
                             <label className={cx(st.label)}>Подтвердите пароль</label>
-                            <input type="password" className={cx(st.input, 'form-control')} placeholder="Введите ваш пароль" required/>  
+                            <input type="password" className={cx(st.input, 'form-control')} placeholder="Введите ваш пароль" required
+                                   onChange={e=> this.confirmPassword = e.target.value}
+                            />
                         </div>
                     </div>
                     <div className={cx('col-12')}>
@@ -107,7 +126,7 @@ const Trade = () => {
                 </div>
             </form>  
         </div>
-    );
+    );}
 }
 
 export default Trade;

@@ -1,13 +1,46 @@
-import React from 'react'
+import React ,{ useEffect } from 'react'
 import st from './higher.module.scss'
 import cx from 'classnames'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
+import { authApi } from '../../../service/authService';
+import { userActions } from '../../../redux/actions';
+import { connect } from 'react-redux';
 
-
-const Higher = () => {
-
+const Higher = (props) => {
+    const [logged, setlogged] = useState(false);
     const [toggle, setToggle] = useState(false);
+    const [data , setData] = useState({
+        phone : "",
+        password : ""
+    })
+
+    useEffect(() => {
+        console.log(logged)
+        console.log(props)
+        setlogged(props.user.isLoggedIn)
+    },[props])
+
+    const [requestProgress , setRequestProgress ] = useState({
+        isRequest : false,
+        isError : false
+    })
+
+
+    const login = e => {
+        e.preventDefault();
+        setRequestProgress( prev => ({...prev , isRequest : true}))
+        authApi.login(data).then( res => {
+            const { token } = res.data;
+            localStorage.setItem("token",token);
+            setRequestProgress({ isRequest : false , isError : false })
+            setToggle(false);
+            window.location.replace('/');
+        } , err => {
+            setRequestProgress({ isRequest : false , isError : true })
+            console.log(err)
+        });
+    }
 
     return (
         <div className={cx(st.higher)}>
@@ -31,16 +64,32 @@ const Higher = () => {
                             <span className={cx(st.count)}>0</span>
                         </Link>
                         <a className={cx(st.link)} href="">
-                            <span>English</span>
+                            <span>Рус</span>
                             <i className={cx(st.icon_2,st.icon, 'fas fa-angle-down')}></i>
                         </a>
-                        <Link className={cx(st.link)} to="/sign-up">
-                            Sign Up
-                        </Link>
-                        <button className={cx(st.sign_in_button)} onClick={() => setToggle(true)}>
-                            <i className={cx(st.icon_3, 'far fa-user-circle')}></i>
-                        </button>
-
+                        {
+                            !logged ? 
+                            <React.Fragment>
+                                <Link className={cx(st.link)} to="/sign-up">
+                                    Регистрация
+                                </Link>
+                                <button className={cx(st.sign_in_button)} onClick={() => setToggle(true)}>
+                                    <i className={cx(st.icon_3, 'far fa-user-circle')}></i>
+                                </button>
+                            </React.Fragment> :
+                            <div className="dropdown" className={cx(st.sign_in_button)}>
+                                <button data-toggle="dropdown" className={cx(st.sign_in_button)}>
+                                    <i className={cx(st.icon_3, 'far fa-user-circle')}></i>
+                                </button>
+                                <div className="dropdown-menu dropdown-menu-right">
+                                    <a href="#" className="dropdown-item">Профиль</a>
+                                    <a href="#" className="dropdown-item" onClick={ () => {
+                                        localStorage.removeItem("token");
+                                        props.isLoggedIn()
+                                    }}> Выход </a>
+                                </div>
+                            </div>
+                        }
                     </div>
                 </div>
             </div>
@@ -51,16 +100,25 @@ const Higher = () => {
                 <div className={cx(st.sign_in_dark)} onClick={() => setToggle(false)}></div>
                 <div className={cx(st.sign_in_box)}>
                     <h1 className={cx(st.sign_in_h1)}>войти в систему </h1>
-                    <form>
+                    <form onSubmit={ login }>
                         <div className={cx('form-group')}>
-                            <label className={cx(st.sign_in_label)}>Логин</label>
-                            <input type="text" className={cx(st.sign_in_input, 'form-control')} placeholder="Введите ваш логин"  required/>
+                            <label className={cx(st.sign_in_label)}>Номер телефона</label>
+                            <input onChange={ e => setData({...data , phone : e.target.value })} type="tel" className={cx(st.sign_in_input, 'form-control')} placeholder="+998XXZZZZZZZ"  required/>
                         </div>
                         <div className={cx('form-group')}>
                             <label className={cx(st.sign_in_label)}>Пароль</label>
-                            <input type="password" className={cx(st.sign_in_input, 'form-control')} placeholder="Введите ваш пароль"  required/>
+                            <input onChange={ e => setData({...data , password : e.target.value })} type="password" className={cx(st.sign_in_input, 'form-control')} placeholder="Введите ваш пароль"  required/>
                         </div>
-                        <input type="submit" value="вход" className={cx(st.sign_in_but)} onClick={() => setToggle(false)} />
+                        {
+                            requestProgress.isError && 
+                            <div className="alert alert-danger">
+                                <i className="fa fa-fw fa-exclamation-triangle"></i>
+                                <strong>  Ошибка ! </strong> Номер телефона или пароль введены неверно
+                            </div>
+                        }
+                        <button disabled={ requestProgress.isRequest } type="submit" className={cx(st.sign_in_but)} >
+                            вход { requestProgress.isRequest && <i className="fa fa-fw fa-circle-notch fa-spin"></i> }
+                        </button>
                     </form>
                     <div className={cx(st.sign_in_content)}>
                         <div>
@@ -69,7 +127,7 @@ const Higher = () => {
                                 Зарегистрироваться
                             </Link>
                         </div>
-                        <Link to="" className={cx(st.password_forget)} onClick={() => setToggle(false)}>
+                        <Link to="/resetpassword" className={cx(st.password_forget)} onClick={() => setToggle(false)}>
                             Забыли пароль
                         </Link>
                     </div>
@@ -80,5 +138,11 @@ const Higher = () => {
     );
 }
 
-export default Higher;
+const mstp = state => (state);
+const mdtp = dispatch => ({
+    isLoggedIn : () => {
+        dispatch(userActions.loggedIn())
+    }
+})
 
+export default connect(mstp,mdtp)(Higher)

@@ -2,19 +2,14 @@ import React, { Component } from 'react'
 import './app.scss';
 import { Layout } from './hoc';
 import { Switch, Route } from 'react-router-dom';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
-
-import { Home, ProductInput, Blogs, Blog, SignUp, MyBusiness, Categories, Categori, Product, Profil, ProfilChange } from './pages'
-
+import { Home, ProductInput, Blogs, Blog, SignUp, MyBusiness, Categories, Categori, Product , Reset, Profil, ProfilChange, Entercode } from './pages'
 
 class App extends Component {
-	constructor(props){
-        super(props);
-
-        this.state = {
+	state = {
             
         }
-	}
 
 	render(){
 		return(
@@ -32,6 +27,8 @@ class App extends Component {
                         <Route path='/categori'  component={Categori} />
                         <Route path='/profile' component={Profil} />
                         <Route path='/profile-change' component={ProfilChange} />
+                        <Route path='/resetpassword' component={Reset}/>
+                        <Route path='/entercode' component={Entercode}/>
                     </Layout>
                 </Switch>
             </div>

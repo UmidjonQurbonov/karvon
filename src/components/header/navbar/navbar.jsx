@@ -8,13 +8,13 @@ const Navbar = () => {
     const [shart, setShart] = useState(false);
 
     const links = [
-        {text:'home', to:'/'},
-        {text:'online market', to:'/market'},
-        {text:'online services', to:'/service'},
-        {text:'rating', to:'/rating'},
-        {text:'my business', to:'/my-business'},
-        {text:'blog', to:'/blogs'},
-        {text:'contact', to:'/contact'}
+        {text:'ДОМОЙ', to:'/'},
+        {text:'ОНЛАЙН РЫНОК', to:'/market'},
+        {text:'ОНЛАЙН-СЕРВИСЫ', to:'/service'},
+        {text:'РЕЙТИНГ', to:'/rating'},
+        {text:'МОЙ БИЗНЕС', to:'/my-business'},
+        {text:'БЛОГ', to:'/blogs'},
+        {text:'КОНТАКТЫ', to:'/contact'}
     ]
 
     const navItem = links.map((link, index)=>(
@@ -28,7 +28,7 @@ const Navbar = () => {
             <div className={cx(st.row, 'container')}>
                 <div className={cx(st.col)}>
                     <Link className={cx(st.categori)} to="/all-categories">
-                        <span className={cx(st.categori_text)}>All Categories</span>
+                        <span className={cx(st.categori_text)}>ВСЕ КАТЕГОРИИ</span>
                         <span className={cx(st.categori_button)}></span>
                     </Link>
                 </div>
