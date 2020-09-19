@@ -16,7 +16,7 @@
   }
 
   @media (max-width: 560px) {
-    min-height: 30vh;
+    min-height: 20rem;
     min-width: 75%;
     margin-left: 30px;
 
@@ -29,13 +29,13 @@
   }
 
   @media (max-width: 320px) {
-    height: 40vh;
+    min-height: 40vh;
     width: 250px;
     margin-left: 40px;
   }
 
   @media (max-width: 280px) {
-    height: 40vh;
+    min-height: 40vh;
     width: 200px;
   }
 

@@ -36,7 +36,7 @@ const BrendsProduct = ({img, link, cost}) => {
     return (
         <div className={cx(s.brends, 'col-12')}>
             <div className={cx("row")}>
-                <div className={cx("col-11")}>
+                <div className={cx("col-12")}>
                     <div className={cx(s.brends_head)}>
                         <NavLink to={link} className={cx()}>
                             <div className={cx(s.brends_body, "row")}>

@@ -1,7 +1,7 @@
 import React ,{ useEffect } from 'react'
 import st from './higher.module.scss'
 import cx from 'classnames'
-import { Link } from 'react-router-dom'
+import {Link, NavLink} from 'react-router-dom'
 import { useState } from 'react'
 import { authApi } from '../../../service/authService';
 import { userActions } from '../../../redux/actions';
@@ -82,7 +82,7 @@ const Higher = (props) => {
                                     <i className={cx(st.icon_3, 'far fa-user-circle')}></i>
                                 </button>
                                 <div className="dropdown-menu dropdown-menu-right">
-                                    <a href="#" className="dropdown-item">Профиль</a>
+                                    <NavLink  to='/profile' className="dropdown-item">Профиль</NavLink>
                                     <a href="#" className="dropdown-item" onClick={ () => {
                                         localStorage.removeItem("token");
                                         props.isLoggedIn()

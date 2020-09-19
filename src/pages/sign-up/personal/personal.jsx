@@ -1,5 +1,5 @@
 import React from 'react'
-import st from './personal.module.scss';
+import st from "../personal/personal.module.scss";
 import style from '../sign-up.module.scss';
 import cx from 'classnames'
 import { useState } from 'react';
