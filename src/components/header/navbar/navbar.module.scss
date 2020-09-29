@@ -18,17 +18,21 @@
     display:flex;
     color:black;
     background:#FEDB4D;
-    font-size:1.2rem;
-    font-weight:bold;
-    padding:1.5rem 2rem;
+    font-size:0.8rem;
+    padding:1.45rem 2rem;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
     transition:all .2s;
 
 
     &_text{
         text-transform:uppercase;
         margin:0;
+        font-size: 13px;
+        white-space: nowrap;
+        width: 90%;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     &_button{
@@ -40,15 +44,6 @@
         border-left:0;
         border-right:0;
 
-        &::after,
-        &::before{
-            content:"";
-            position:absolute;
-            width:100%;
-            height:100%;
-            border:1px solid black;
-            transition:all .2s;
-        }
 
         &::after{
             top:-.6rem;
@@ -244,3 +239,49 @@
     }
 }
 
+
+
+.list{
+    background-color: #eee;
+    position: absolute !important;
+    top: 0px;
+}
+
+.categoryList{
+    margin-bottom: 20px;
+    transition: 0.63s;
+}
+
+
+.category_menu{
+    background-color: #efe;
+    padding: 0px !important;
+    max-width: 250px;
+    list-style: none !important;
+    
+    li{
+        white-space: nowrap;
+        overflow: hidden;
+        transition: 0.3s;
+        cursor: pointer;
+        padding:8px 15px !important;
+        text-overflow: ellipsis;
+
+        &:hover{
+            background: white;
+        }
+
+        img{
+            width: 20px !important;
+            margin-right: 10px;
+        }
+    }
+}
+
+.relative{
+    position: relative;
+    height: 0px !important;
+    overflow: visible;
+    z-index: 11;
+    width: 100% !important;
+}

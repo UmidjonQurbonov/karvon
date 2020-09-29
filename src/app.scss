@@ -14,6 +14,7 @@
 
 html{
     font-size:62.5%;  //100% -> 16px -> 1rem,10/16 ->  62.5% -> 10px;
+    scroll-behavior: smooth !important;
 
     @media (max-width:576px){  //sm => 576px  
         font-size:56%;         //1rem 4.8px  

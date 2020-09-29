@@ -11,7 +11,7 @@ import img2 from '../../../img/aksi_2.jpg'
 import img3 from '../../../img/aksi_3.jpg'
 import { useEffect } from 'react';
 
-const Aksiya = () => {
+const Aksiya = ({lang}) => {
 
     const aksiyaData = [
         {img:img1,title:'Законодатели оставили школьников без обедов', to:"/", sana:'2020.0622', kSoni:4534, avtor:'Admin'},
@@ -26,7 +26,7 @@ const Aksiya = () => {
     return (
        <div className={cx(st.aksiya)}>
            <div className={cx('container')}>
-                <h1 className={cx('home_blog_title')}>акции</h1>
+                <h1 className={cx('home_blog_title')}> {lang.lang.promotion} </h1>
                 <div className={cx('row')}>
                     {cards}
                 </div>
@@ -39,10 +39,4 @@ const Aksiya = () => {
 
 
 const mstp = state => (state);
-const mdtp = dispatch => ({
-    isLoggedIn : () => {
-        dispatch(userActions.loggedIn())
-    }
-})
-
-export default connect(mstp,mdtp)(Aksiya);
+export default connect(mstp)(Aksiya);

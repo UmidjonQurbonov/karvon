@@ -4,8 +4,11 @@ import cx from 'classnames'
 import {Link, NavLink} from 'react-router-dom'
 import { useState } from 'react'
 import { authApi } from '../../../service/authService';
-import { userActions } from '../../../redux/actions';
+import { userActions , langActions } from '../../../redux/actions';
 import { connect } from 'react-redux';
+import uz from '../../../img/uz.svg';
+import ru from '../../../img/ru.svg';
+
 
 const Higher = (props) => {
     const [logged, setlogged] = useState(false);
@@ -15,9 +18,9 @@ const Higher = (props) => {
         password : ""
     })
 
+const lang = props.lang.lang;
+
     useEffect(() => {
-        console.log(logged)
-        console.log(props)
         setlogged(props.user.isLoggedIn)
     },[props])
 
@@ -58,20 +61,18 @@ const Higher = (props) => {
                         </a>
                     </div>
                     <div className={cx(st.box)}>
-                        <Link className={cx(st.link_2, st.link)} to="">
-                            <i className={cx(st.icon_3, 'far fa-heart')}>
-                            </i>
-                            <span className={cx(st.count)}>0</span>
-                        </Link>
-                        <a className={cx(st.link)} href="">
-                            <span>Рус</span>
-                            <i className={cx(st.icon_2,st.icon, 'fas fa-angle-down')}></i>
-                        </a>
+                        <div className={cx(st.link,"dropdown d-inline-block",st.langue)}>
+                            <a href="#" className={cx("dropdown-toggle")} data-toggle="dropdown"> <img src={ props.lang.type === "uz" ? uz : ru } style={{width : "20px"}}/> { props.lang.type.toUpperCase() } </a>
+                            <div className={cx("dropdown-menu dropdown-menu-right",st.langue_menu)}>
+                                <a onClick={() => props.changeUz()} href="#" className="dropdown-item"> <img src={uz} alt="uzbek"/> Uz </a>
+                                <a onClick={() => props.changeRu()} href="#" className="dropdown-item"> <img src={ru} alt="rus"/> Ru </a>
+                            </div>
+                        </div>
                         {
                             !logged ? 
                             <React.Fragment>
                                 <Link className={cx(st.link)} to="/sign-up">
-                                    Регистрация
+                                    { }
                                 </Link>
                                 <button className={cx(st.sign_in_button)} onClick={() => setToggle(true)}>
                                     <i className={cx(st.icon_3, 'far fa-user-circle')}></i>
@@ -82,11 +83,11 @@ const Higher = (props) => {
                                     <i className={cx(st.icon_3, 'far fa-user-circle')}></i>
                                 </button>
                                 <div className="dropdown-menu dropdown-menu-right">
-                                    <NavLink  to='/profile' className="dropdown-item">Профиль</NavLink>
+                                    <NavLink  to='/profile' className="dropdown-item"> {lang.profile} </NavLink>
                                     <a href="#" className="dropdown-item" onClick={ () => {
                                         localStorage.removeItem("token");
                                         props.isLoggedIn()
-                                    }}> Выход </a>
+                                    }}> {lang.logout} </a>
                                 </div>
                             </div>
                         }
@@ -99,36 +100,36 @@ const Higher = (props) => {
             <div className={cx(st.sign_in, toggle ? st.show : st.close)}  >
                 <div className={cx(st.sign_in_dark)} onClick={() => setToggle(false)}></div>
                 <div className={cx(st.sign_in_box)}>
-                    <h1 className={cx(st.sign_in_h1)}>войти в систему </h1>
+                    <h1 className={cx(st.sign_in_h1)}>{ lang.loginTitle} </h1>
                     <form onSubmit={ login }>
                         <div className={cx('form-group')}>
-                            <label className={cx(st.sign_in_label)}>Номер телефона</label>
+                            <label className={cx(st.sign_in_label)}> {lang.phone} </label>
                             <input onChange={ e => setData({...data , phone : e.target.value })} type="tel" className={cx(st.sign_in_input, 'form-control')} placeholder="+998XXZZZZZZZ"  required/>
                         </div>
                         <div className={cx('form-group')}>
-                            <label className={cx(st.sign_in_label)}>Пароль</label>
+                            <label className={cx(st.sign_in_label)}> {lang.password} </label>
                             <input onChange={ e => setData({...data , password : e.target.value })} type="password" className={cx(st.sign_in_input, 'form-control')} placeholder="Введите ваш пароль"  required/>
                         </div>
                         {
                             requestProgress.isError && 
                             <div className="alert alert-danger">
                                 <i className="fa fa-fw fa-exclamation-triangle"></i>
-                                <strong>  Ошибка ! </strong> Номер телефона или пароль введены неверно
+                                { lang.loginError }
                             </div>
                         }
                         <button disabled={ requestProgress.isRequest } type="submit" className={cx(st.sign_in_but)} >
-                            вход { requestProgress.isRequest && <i className="fa fa-fw fa-circle-notch fa-spin"></i> }
+                            { lang.enter } { requestProgress.isRequest && <i className="fa fa-fw fa-circle-notch fa-spin"></i> }
                         </button>
                     </form>
                     <div className={cx(st.sign_in_content)}>
                         <div>
-                            <span>У вас нет аккаунт?</span>
-                            <Link to="/sign-up" className={cx(st.sign_up_link)} onClick={() => setToggle(false)}>
-                                Зарегистрироваться
-                            </Link>
+                        <span>{ lang.haveNotAccount }</span><br/>
+                        <Link to="/sign-up" className={cx(st.sign_up_link)} onClick={() => setToggle(false)}>
+                        {lang.registerWithLogin}
+                        </Link>
                         </div>
                         <Link to="/resetpassword" className={cx(st.password_forget)} onClick={() => setToggle(false)}>
-                            Забыли пароль
+                            { lang.forgotPassTitle }
                         </Link>
                     </div>
                 </div>
@@ -142,7 +143,13 @@ const mstp = state => (state);
 const mdtp = dispatch => ({
     isLoggedIn : () => {
         dispatch(userActions.loggedIn())
+    },
+    changeUz : () => {
+        dispatch(langActions.uz())
+    },
+    changeRu : () => {
+        dispatch(langActions.ru())
     }
 })
 
-export default connect(mstp,mdtp)(Higher)
+export default connect(mstp,mdtp)(Higher);

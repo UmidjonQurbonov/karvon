@@ -1,0 +1,21 @@
+.loader{
+    position: absolute;
+    width: 100%;
+    background: #FEDB4D !important;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+
+    p{
+        font-size: 20px;
+        color: black;
+        margin-top: 20px;
+        font-variant: small-caps;
+        text-transform: uppercase;
+        font-family: Bold;
+    }
+}

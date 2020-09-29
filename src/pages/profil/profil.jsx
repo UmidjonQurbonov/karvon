@@ -13,7 +13,8 @@ const Profil = () => {
         {to: "", title:"Mening buyurtmalarim", icon: "fa fa-cube"},
         {to: "", title:"Manzil", icon: "fas fa-map-marker-alt"},
         {to: "", title:"Tanlangan mahsulotlar", icon: "far fa-star"},
-        {to: "", title:"Eslatmalar", icon: "far fa-bell"}
+        {to: "", title:"Eslatmalar", icon: "far fa-bell"},
+        {to : "/profile/createStore", title : "Do'kon yaratish" , icon : "fa fa-plus" }
     ]
 
     const malumot = [

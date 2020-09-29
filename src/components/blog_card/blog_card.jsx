@@ -2,9 +2,11 @@ import React from 'react'
 import st from './blog_card.module.scss'
 import cx from 'classnames'
 import { Link } from 'react-router-dom'
+import {  connect } from 'react-redux';
+
+const BlogCard = ({img, title, avtor, sana, kSoni, to , lang}) => {
 
 
-const BlogCard = ({img, title, avtor, sana, kSoni, to}) => {
     return (
         <div className={cx('col-md-4')}>    
             <div className={st.card}>
@@ -15,7 +17,7 @@ const BlogCard = ({img, title, avtor, sana, kSoni, to}) => {
                     <Link to={to} className={cx(st.card_title_link)}>{title}</Link>
                     <div className={cx(st.content)}>
                         <span className={cx(st.content_span)}>
-                            <span className={cx(st.avtor)}>Автор:</span>{avtor}
+                            <span className={cx(st.avtor)}> {lang.lang.author} :</span>{avtor}
                         </span>
                         <span className={cx(st.content_span)}>
                             {sana}
@@ -33,7 +35,7 @@ const BlogCard = ({img, title, avtor, sana, kSoni, to}) => {
                 </div>
                 <div>
                     <Link to={to} className={cx(st.link)}>
-                        Читать далее...
+                        { lang.lang.reedMore }
                     </Link>
                 </div>
             </div>
@@ -42,4 +44,6 @@ const BlogCard = ({img, title, avtor, sana, kSoni, to}) => {
     );
 }
 
-export default BlogCard;
+const mstp = state => (state);
+
+export default connect(mstp,null)(BlogCard);

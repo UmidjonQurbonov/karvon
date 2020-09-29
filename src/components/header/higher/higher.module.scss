@@ -274,3 +274,21 @@
 .close{
     display:none;
 }
+
+.langue{
+    a{
+        color: black !important;
+        text-decoration: none !important;
+
+        img{
+            width: 20px;
+            margin-right: 10px;
+        }
+    }
+
+    &_menu{
+        a{
+            font-size: 16px;
+        }
+    }
+}

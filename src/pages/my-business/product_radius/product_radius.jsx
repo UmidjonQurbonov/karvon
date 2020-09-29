@@ -5,41 +5,22 @@ import cx from 'classnames'
 const ProductRadius = (props) => {
 
     const rateSolve = (rate) => {
-
-        {
-            if (rate === 5) {
-                return <div className={cx('col-7 text-center ml-3', st.rate)}>
-                    <i className={cx('fas fa-star')}></i>
-                    <i className={cx('fas fa-star')}></i>
-                    <i className={cx('fas fa-star')}></i>
-                    <i className={cx('fas fa-star')}></i>
-                    <i className={cx('fas fa-star')}></i>
-                </div>
-            } else if (rate === 4) {
-                return <div className={cx('col-7 text-center ml-3', st.rate)}>
-                    <i className={cx('fas fa-star')}></i>
-                    <i className={cx('fas fa-star')}></i>
-                    <i className={cx('fas fa-star')}></i>
-                    <i className={cx('fas fa-star')}></i>
-                </div>
-            } else if (rate === 3) {
-                return <div className={cx('col-7 text-center ml-3', st.rate)}>
-                    <i className={cx('fas fa-star')}></i>
-                    <i className={cx('fas fa-star')}></i>
-                    <i className={cx('fas fa-star')}></i>
-                </div>
-            } else if (rate === 2) {
-                return <div className={cx('col-7 text-center ml-3', st.rate)}>
-                    <i className={cx('fas fa-star')}></i>
-                    <i className={cx('fas fa-star')}></i>
-                </div>
-            } else if (rate === 1) {
-                return <div className={cx('col-7 text-center ml-3', st.rate)}>
-                    <i className={cx('fas fa-star')}></i>
-                </div>
-            }
+        let arr = [];
+        for(var i=0;i<rate;i++){
+            arr.push(i)
         }
-    };
+        return (
+                <div className={cx('col-7 text-center ml-3', st.rate)}>
+                    {
+                        arr.map(item => {
+                            return(
+                                <i key={item} className={cx('fas fa-star')}></i>
+                            )
+                        })
+                    }
+                </div>
+            )
+        }
 
     const costView = (cost) => {
 
@@ -74,7 +55,7 @@ const ProductRadius = (props) => {
             <div className={cx(st.card, 'text-center')}>
                 <div className={cx(st.card_img)}>
                     <img src={props.img} alt={`product_${props.title}`}
-                         className={cx(st.card_img, 'img-fluid w-100 h-100')}/>
+                         className={cx('img-fluid w-100 h-100')}/>
                     <a className={cx(st.card_link)} href="#">Быстрый просмотр</a>
                 </div>
                 <div className={cx(st.product_body, 'p-md-2')}>

@@ -11,9 +11,9 @@ import img4 from '../../../img/industry_3.jpg'
 import img5 from '../../../img/industry_1.jpg'
 import img6 from '../../../img/industry_2.jpg'
 
+import { connect } from 'react-redux';
 
-
-const Popular = () => {
+const Popular = ({lang}) => {
     
     const cardDate = [
         {img:img1, to:"", title:'Услуги веб - и мобильного дизайн'},
@@ -36,7 +36,7 @@ const Popular = () => {
     return (
         <div className={cx(st.popular)}>
             <div className={cx('container')}>
-                <h1 className={cx('home_blog_title')}>популярный услуги </h1>
+                <h1 className={cx('home_blog_title')}>  {lang.lang.popularServices} </h1>
                 <div className={cx('row')}>
                     {card}
                 </div>
@@ -45,4 +45,6 @@ const Popular = () => {
     );
 }
 
-export default Popular;
+const mstp = state => (state)
+
+export default connect(mstp,null)(Popular);

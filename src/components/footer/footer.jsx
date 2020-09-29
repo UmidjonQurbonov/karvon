@@ -2,21 +2,24 @@ import React from 'react'
 import st from './footer.module.scss'
 import cx from 'classnames'
 import { Link } from 'react-router-dom';
-
+import {connect} from 'react-redux';
 import headset from '../../img/headset.svg'
 
 
-const Footer = () => {
+const Footer = (props) => {
+
+    const lang = props.lang.lang;
+
     return (
         <div className={cx(st.footer)}>
             {podpis()}
             <div className={cx(st.main)}>
                 <div className={cx('container px-5 px-md-0')}>
                     <div className={cx('row')}>
-                        {location()}
-                        {kompaniya()}              
-                        {info()}
-                        {akkount()}
+                        {location(lang)}
+                        {kompaniya(lang)}              
+                        {info(lang)}
+                        {akkount(lang)}
                     </div>
 
                     <div className={cx(st.copy)}>
@@ -28,17 +31,19 @@ const Footer = () => {
     );
 }
 
-export default Footer;
+const mstp = state => (state);
+
+export default connect(mstp,null)(Footer);
 
 
-const akkount = () => {
+const akkount = (lang) => {
 
     const links = [
-        {to:'', title:'Личная информация'},
-        {to:'', title:'Заказы'},
-        {to:'', title:'Кредитные слипы'},
-        {to:'', title:'Адреса'},
-        {to:'', title:'Мои списки желаний'}
+        {to:'', title:lang.personalInfo},
+        {to:'', title:lang.orders},
+        {to:'', title:lang.credit},
+        {to:'', title:lang.addreses},
+        {to:'', title:lang.wishlist}
         
     ]
 
@@ -52,7 +57,7 @@ const akkount = () => {
         <div className={cx('col-sm-6 col-md-3')}>
             <div className={cx(st.all)}>
                 <div className={cx(st.col)}>
-                    <h1 className={cx(st.col_h1)}>Информация</h1>
+                    <h1 className={cx(st.col_h1)}> {lang.info} </h1>
                     {link}
                 </div>
             </div>
@@ -62,15 +67,15 @@ const akkount = () => {
 
 
 
-const info = () => {
+const info = (lang) => {
 
     const links = [
-        {to:'', title:'Акции и спецпредложения'},
-        {to:'', title:'Статьи'},
-        {to:'', title:'Новости'},
-        {to:'', title:'Услуги'},
-        {to:'', title:'Оплата и доставка'},
-        {to:'', title:'Гарантия'},
+        {to:'', title:lang.promotions},
+        {to:'', title:lang.articles},
+        {to:'', title:lang.news},
+        {to:'', title:lang.service},
+        {to:'', title:lang.payment},
+        {to:'', title:lang.guarante},
     ]
 
     const link = links.map((i, index) => (
@@ -83,7 +88,7 @@ const info = () => {
         <div className={cx('col-sm-6 col-md-3')}>
             <div className={cx(st.info, st.all)}>
                 <div className={cx(st.col)}>
-                    <h1 className={cx(st.col_h1)}>Информация</h1>
+                    <h1 className={cx(st.col_h1)}> {lang.info} </h1>
                     {link}
                 </div>
             </div>
@@ -95,14 +100,14 @@ const info = () => {
 
 
 
-const kompaniya = () => {
+const kompaniya = (lang) => {
 
     const links = [
-        {to:'', title:'О компания'},
-        {to:'', title:'Лицензии и сертификаты'},
-        {to:'', title:'Вакансии'},
-        {to:'', title:'Сотрудники'},
-        {to:'', title:'Контакты'},
+        {to:'', title:lang.companyInfo},
+        {to:'', title:lang.certificate},
+        {to:'', title:lang.vacancis},
+        {to:'', title:lang.partners},
+        {to:'', title:lang.contact},
     ]
 
     const link = links.map((i, index) => (
@@ -115,7 +120,7 @@ const kompaniya = () => {
         <div className={cx('col-sm-6 col-md-3')}>
             <div className={cx(st.all)}>
                 <div className={cx(st.col)}>
-                    <h1 className={cx(st.col_h1)}>компания</h1>
+                    <h1 className={cx(st.col_h1)}>{lang.company}</h1>
                     {link}
                 </div>
             </div>
@@ -125,20 +130,20 @@ const kompaniya = () => {
 
 
 
-const location = () => {
+const location = (lang) => {
     return(
         <div className="col-md-3 col-sm-6">
             <div className={cx(st.location)}>
                 <div className={cx(st.box)}>
                     <img src={headset} alt="" className={cx(st.box_img)}/>
                     <div className={cx(st.box_content)}>
-                        <h1 className={cx(st.box_h1)}>Есть вопрос? Звоните нам 24/7!</h1>
+                        <h1 className={cx(st.box_h1)}> {lang.support} </h1>
                         <a href="tel:+998 91 3713156" className={cx(st.box_a)}>+998 91 3713156</a>
                     </div>
                 </div>
                 <a href="" className={cx(st.location_a)}>
                     <i className={cx(st.location_icon, 'fa fa-map-marked-alt')}></i>
-                    Ташкент, улица Амира Темура 108
+                    {lang.addressFooter}
                 </a>
                 <a href="" className={cx(st.location_a)}>
                     <i className={cx(st.location_icon, 'fa fa-envelope')}></i>

@@ -2,11 +2,11 @@ import React, {useState} from 'react'
 import st from './median.module.scss'
 import cx from 'classnames'
 import { Link } from 'react-router-dom'
-
+import { connect } from 'react-redux';
 import headset from '../../../img/headset.svg'
 
 
-const Median = () => {
+const Median = (props) => {
     const [value, setValue] = useState('All categories');
     const [categori, setCategori] = useState([
         {value: 'Phones and accessories'},
@@ -21,6 +21,8 @@ const Median = () => {
         </li>
     ));
 
+    const lang = props.lang.lang;
+
     return (
         <div className={cx(st.median)}>
             <div className={cx('container', st.row)}>
@@ -33,7 +35,7 @@ const Median = () => {
                     
                     <div className={cx(st.form_group)}>
                         <div className={cx('input-group')}>
-                            <input type="text" placeholder="Search..." className={cx(st.input, 'form-control')} required />
+                            <input type="text" placeholder={ lang.search } className={cx(st.input, 'form-control')} required />
                             <div className={cx('input-group-append')}>
                                 <div className={cx(st.select)}>
                                     <div className={cx(st.selected)}>
@@ -52,11 +54,19 @@ const Median = () => {
                         </div>
                     </div>
 
-                    <div>
-                        <a href="tel:+998913713156" className={cx(st.tellink)}>
-                            <img src={headset} alt="" className={cx(st.headset, 'img-fluid')}/>
-                            <span className={cx(st.number)}>+998 91 3713156</span>
-                        </a>
+                    <div className={cx(st.tools)}>
+                        <figure>
+                            <Link>
+                                <img src={require('../../../img/tag.svg')} alt=""/>
+                                <figcaption> {lang.wishList} </figcaption>
+                            </Link>
+                        </figure>
+                        <figure>
+                            <Link>
+                                <img src={require('../../../img/cart.svg')} />
+                                <figcaption> {lang.cart} </figcaption>
+                            </Link>
+                        </figure>
                     </div>
                 </div>
 
@@ -66,4 +76,6 @@ const Median = () => {
     );
 }
 
-export default Median;
+const mstp = state => (state);
+
+export default connect(mstp,null)(Median);

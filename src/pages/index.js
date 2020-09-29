@@ -11,3 +11,4 @@ export { default as Profil } from './profil/profil'
 export { default as ProfilChange } from './profil-change/profil-change'
 export { default as Reset } from './resetpassword/reset';
 export { default as Entercode } from './entercode/entercode';
+export { default as CreateStore } from './createStore/createStore';

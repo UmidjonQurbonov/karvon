@@ -1,0 +1,91 @@
+.treeselect{
+    width: 100%;
+    display: inline-block;
+    font-family: Regular;
+
+    &_menu{
+        box-shadow: 0 4px 15px -4px rgba(0,0,0,0.3);
+        transition: 0.3s !important;
+        max-height: 50vh;
+        overflow-y: scroll;
+        position: absolute;
+        z-index: 3;
+        display: block;
+        font-family: Regular !important;
+        background: white;
+        width: 100%;
+
+        ul{
+            padding-left: 20px !important;
+        }
+
+        &_label{
+            padding: 7px 15px;
+            color: black !important;
+            display: flex;
+            font-family: Regular !important;
+            align-items: center;
+            cursor: pointer !important;
+            border-bottom: 1px solid lightgray;
+
+
+            span{
+                font-size: 12px !important;
+            }
+
+            i{
+                border: 1px solid gray;
+                border-radius: 100px;
+                transition: 0.1s;
+                margin-right: 10px;
+
+                &:hover{
+                    background: gray;
+                    color: white;
+                }
+            }
+
+            &:hover{
+                background: lightgray;
+            }
+        }
+    }
+
+    &_placeholder{
+        border: 1px solid lightgray;
+        padding: 10px 15px;
+        padding-right: 50px;
+        position: relative;
+        width: 100% !important;
+        text-overflow: ellipsis;
+        display: block;
+        overflow: hidden;
+        border-radius: 0px;
+        line-break: loose;
+        white-space: nowrap;
+        word-wrap: none;
+        cursor: pointer;
+
+        i{
+            display: inline-block;
+            position: absolute;
+            right: 10px;
+            font-size: 20px;
+        }
+    }
+
+    ul{
+        list-style: none ;
+        padding: 0px;
+    }
+}
+
+.focused{
+    border: none !important;
+    border-radius: 5px !important;
+    border-bottom: 2px solid #FEDB4D !important;
+}
+
+.relative{
+    position: relative !important;
+}

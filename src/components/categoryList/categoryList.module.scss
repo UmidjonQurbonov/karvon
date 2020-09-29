@@ -1,0 +1,103 @@
+.leftBar{
+    width: 18% !important;
+    border-right: 1px solid lightgray;
+    padding : 10px 0px 10px 10px;
+
+    @media(max-width:1100px){
+        width: 25% !important;
+    }
+    a{
+        display: block;
+        width: 100%;
+        font-family: Regular;
+        font-variant: small-caps;
+	border-radius : 10px 0px 0px 10px;
+        color: gray !important;
+        transition: 0.3s;
+        padding: 8px 15px;
+	padding-right:0px;
+        font-size: 14px;
+	overflow : hidden;
+	white-space : nowrap;
+	text-overflow : ellipsis;
+        text-decoration: none !important;
+
+        span{
+            width: 90%;
+            padding-right: 10px !important;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        &:hover{
+            background: white !important;
+            color: royalblue !important;
+        }
+    }
+}
+
+.categoryList{
+    background: #eee;
+    border: 1px solid lightgray;
+    border-top: none;
+    box-shadow: 0px 6px 6px -4px rgba(0,0,0,0.6);
+    transition: 0.3s !important;
+    margin-top: 100px !important;
+    position: absolute;
+    width: 100%;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    padding-top: 200px !important;
+}
+
+
+.visibleCategory{
+    padding-top: 10px !important;
+    opacity: 1 !important;
+    margin-top: 0px !important;
+    visibility: visible !important;
+}
+
+.subCategory{
+    position: absolute;
+    list-style: none !important;
+    top: 0px;
+    width: 82% !important;
+    left: 18% !important;
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s;
+    @media(max-width : 1100px){
+        width: 75% !important;
+        left: 25% !important;
+    }
+
+    a{
+        display: block !important;
+        font-size: 14px !important;
+        text-transform: none !important;
+        font-variant: normal !important;
+        width: fit-content !important;
+        padding: 4px !important;
+
+        &:hover{
+            background: transparent !important;
+            color: royalblue !important;
+        }
+    }
+
+    ul{
+        list-style: none !important;
+    }
+}
+
+.visibleSub{
+    visibility: visible;
+    opacity: 1;
+    width: 100%;
+    display: grid;
+}
+
+.subtitleitem{
+    font-family: Bold !important ;
+}

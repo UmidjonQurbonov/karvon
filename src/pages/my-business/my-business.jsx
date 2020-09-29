@@ -169,17 +169,6 @@ const Links = () => {
                     </div>
 
                 </div>
-                <div className={cx('col-md-3 col-12')}>
-                    <div className={cx(st.sidebar, 'text-uppercase')}>
-                        Sidebar
-                    </div>
-                    <div>
-                        {linksView}
-                    </div>
-                    <div className={cx('row')}>
-                        {cards}
-                    </div>
-                    </div>
             </div>
         </div>
     )

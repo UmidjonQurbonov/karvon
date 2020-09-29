@@ -8,13 +8,17 @@ import ind_2 from '../../../img/industry_2.jpg'
 import ind_3 from '../../../img/industry_3.jpg'
 import ind_4 from '../../../img/industry_4.jpg'
 import { Link } from 'react-router-dom'
+import {connect} from 'react-redux';
 
-const Hot = () => {
+
+const Hot = (props) => {
+
+    const { lang } = props.lang;
 
     return (
         <div className={cx(st.hot)}>
             <div className={cx('container')}>
-                <h1 className={cx('home_blog_title')}>горячий блог</h1>
+                <h1 className={cx('home_blog_title')}> { lang.bloghome } </h1>
                 <div className={cx('row')}>
                     <div className={cx('col-md-6 col-sm-12')}>
                         <div className={cx(st.box)}>
@@ -93,4 +97,6 @@ const Hot = () => {
     );
 }
 
-export default Hot;
+const mstp = state => (state);
+
+export default connect(mstp,null)(Hot);

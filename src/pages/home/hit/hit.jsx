@@ -10,8 +10,9 @@ import hit4 from '../../../img/hit_4.jpg'
 import hit5 from '../../../img/hit_5.jpg'
 import hit6 from '../../../img/hit_6.jpg'
 import { HitCard } from '../../../components'
+import {connect} from 'react-redux';
 
-const Hit = () => {
+const Hit = ({lang}) => {
 
     const hitData = [
         {title:'Очень хороший бестселлер', to:'', img:hit1, link:'Radius'},
@@ -29,7 +30,7 @@ const Hit = () => {
     return (
         <div className={cx(st.hit)}>
             <div className={cx('container')}>
-                <h1 className={cx('home_blog_title')}>бестселлеры</h1>
+                <h1 className={cx('home_blog_title')}> {lang.lang.bestSeller} </h1>
                 <div className={cx('row')}>
                     {cards}
                 </div>
@@ -38,4 +39,6 @@ const Hit = () => {
     );
 }
 
-export default Hit;
+const mstp = state => (state);
+
+export default connect(mstp,null)(Hit);

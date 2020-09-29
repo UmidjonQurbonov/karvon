@@ -3,13 +3,13 @@ import st from './ekspert.module.scss'
 import cx from 'classnames'
 
 import { BlogCard } from '../../../components'
-
+import { connect } from 'react-redux';
 import img from '../../../img/innov_1.jpg'
 import img1 from '../../../img/innov_2.jpg'
 import img2 from '../../../img/innovation.jpg'
 
 
-const Ekspert = () => {
+const Ekspert = (props) => {
 
     const cardData = [
         {img:img,title:'Законодатели оставили школьников без обедов', to:"/", sana:'2020.0622', kSoni:7551, avtor:'Admin'},
@@ -24,7 +24,7 @@ const Ekspert = () => {
     return (
         <div className={cx(st.ekspert)}>
             <div className={cx('container')}>
-                <h1 className={cx('home_blog_title')}>блог экспертов</h1>
+                <h1 className={cx('home_blog_title')}> {props.lang.lang.blogexpert} </h1>
                 <div className={cx('row')}>
                     {cards}
                 </div>
@@ -33,4 +33,6 @@ const Ekspert = () => {
     );
 }
 
-export default Ekspert;
+const mstp = state => (state);
+
+export default connect(mstp,null)(Ekspert);
