@@ -166,7 +166,7 @@ const Product = () => {
         <div className={cx(s.product, 'mt-3')}>
             <div className={cx('container')}>
                 <div className={cx(s.header, 'row')}>
-                    <div className={cx('col-xl-3 col-md-4 col-sm-6 col-12')}>
+                    <div className={cx(' col-md-4 col-sm-6 col-12 mx-0')}>
                         <div className={cx(s.brends, 'row')}>
                             <div className={cx('col-12')}>
                                 <div className={cx("row")}>
@@ -182,7 +182,7 @@ const Product = () => {
                             {brendsView}
                         </div>
                     </div>
-                    <div className={cx('col-xl-9 col-md-8 col-sm-6  mt-4  mx-sm-0  mt-sm-0 col-12', s.col)}>
+                    <div className={cx('col-md-8 col-sm-6  mt-4  mx-sm-0  mt-sm-0 col-12', s.col)}>
                         <div className={cx(s.history, 'text-muted')}>
                             <span>Тук сте: </span>
                             <span>

@@ -2,6 +2,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  width: 100%;
   background: #ffffff;
   transition: all .3s;
   margin: 1.5rem 0;
@@ -12,32 +13,24 @@
 
   @media (max-width: 768px) {
     min-height: 25vh;
-
   }
 
   @media (max-width: 560px) {
     min-height: 20rem;
-    min-width: 75%;
-    margin-left: 30px;
-
   }
 
   @media (max-width: 375px) {
     min-height: 31vh;
-    width: 300px;
-    margin-left: 20px;
+    width: 100%;
   }
 
   @media (max-width: 320px) {
     min-height: 40vh;
-    width: 250px;
-    margin-left: 40px;
   }
 
   @media (max-width: 280px) {
     min-height: 40vh;
-    width: 200px;
-  }
+    }
 
 
 
@@ -103,6 +96,8 @@
   border: 0;
   background: white;
   color: blue;
+  margin: 0!important;
+  padding: 0!important;
 
   &:hover {
     color: lightblue;

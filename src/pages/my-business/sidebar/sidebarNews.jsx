@@ -8,7 +8,7 @@ const SidebarNews = ({img, title, avtor, sana, kSoni, to}) => {
 
 
     return (
-        <div className={cx('col-md-12 col-sm-6')}>
+        <div className={cx('col-12 col-sm-6 col-md-6 col-lg-12')}>
             <div className={st.card}>
                 <div className={cx(st.card_header)}>
                     <img src={img} alt="" className={cx(st.card_img,'img-fluid w-100 h-100')}/>
