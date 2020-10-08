@@ -10,7 +10,7 @@ const ProductRadius = (props) => {
             arr.push(i)
         }
         return (
-                <div className={cx('col-7 text-center ml-3', st.rate)}>
+                <div className={cx('col-8 text-center ', st.rate)}>
                     {
                         arr.map(item => {
                             return(
@@ -58,14 +58,14 @@ const ProductRadius = (props) => {
                          className={cx('img-fluid w-100 h-100')}/>
                     <a className={cx(st.card_link)} href="#">Быстрый просмотр</a>
                 </div>
-                <div className={cx(st.product_body, 'p-md-2')}>
-                    <div className={cx(st.product_rate, 'row px-1 my-2')}>
-                        <div className={cx('col-2', st.heart)}>
+                <div className={cx(st.product_body, 'py-md-2')}>
+                    <div className={cx(st.product_rate, 'row my-2')}>
+                        <div className={cx('col-2 p-1', st.heart)}>
                             <button className={cx(st.button)}>
                                 <i className={cx('fas fa-heart')}></i></button>
                         </div>
                         {rateSolve(props.rate)}
-                        <div className={cx('col-2 ml-sm-4 ml-md-0', st.share)}>
+                        <div className={cx('col-2 ml-md-0 d-flex justify-content-start p-1', st.share)}>
                             <button className={cx(st.button)}>
                                 <i className={cx('fas fa-share-alt')}></i>
                             </button>
