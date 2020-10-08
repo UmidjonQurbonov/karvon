@@ -5,6 +5,9 @@ const headers = {
 }
 
 export const storeApi = {
+    getStores : () => {
+        return axios.get(`${api}all`,{ headers })
+    },
     createStore : data =>{
         return axios.post(`${api}create`,data,{ headers })
     }

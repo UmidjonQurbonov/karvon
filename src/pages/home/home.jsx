@@ -7,19 +7,17 @@ import Reyting from './reyting/reyting';
 import Aksiya from './aksiya/aksiya';
 import Hit from './hit/hit';
 import Popular from './popular/popular';
+import Products from './products/products';
 
 import {Partner} from '../../components';
 
 class Home extends Component {
-    constructor(props){
-        super(props);
 
-        this.state = {}
-    }
+state = {}
 
 render() {
     return (
-        <div className={'home'}>
+        <div className='animate__animated animate__fadeInUp home'>
             <Premier/>
             <Hot/>
             <Ekspert/>

@@ -71,8 +71,8 @@ const lang = props.lang.lang;
                         {
                             !logged ? 
                             <React.Fragment>
-                                <Link className={cx(st.link)} to="/sign-up">
-                                    { }
+                                <Link className={cx(st.link,"d-inline-flex align-items-center")} to="/sign-up">
+                                    <i style={{fontSize : "20px", marginRight : "5px"}} className="bx bx-user-plus"></i>{ lang.register }
                                 </Link>
                                 <button className={cx(st.sign_in_button)} onClick={() => setToggle(true)}>
                                     <i className={cx(st.icon_3, 'far fa-user-circle')}></i>

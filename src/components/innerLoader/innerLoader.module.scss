@@ -1,0 +1,22 @@
+.innerLoader{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #0f0f11ad;
+    z-index: 11;
+}
+
+.loader{
+    background: rgba(43, 84, 194, 0.644);
+    width: 130px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}

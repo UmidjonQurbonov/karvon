@@ -14,7 +14,7 @@ const Navbar = (props) => {
     const links = [
         {text: lang.home, to:'/'},
         {text: lang.onlineMarket, to:'/market'},
-        {text:lang.onlineService, to:'/service'},
+        {text:lang.products, to:'/products'},
         {text:lang.rate, to:'/rating'},
         {text:lang.myBusiness, to:'/my-business'},
         {text:lang.blog, to:'/blogs'},

@@ -5,11 +5,13 @@ import { Switch, Route } from 'react-router-dom';
 import './fonts.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { connect } from 'react-redux';
-import { categoryActions } from './redux/actions';
 import { categoryApi } from './service/categoryService';
-import { Loader } from './components'
+import { productApi } from './service/productService';
+import { storeApi } from './service/storeService';
+import { Loader } from './components';
+import 'animate.css/animate.min.css';
 
-import { Home, ProductInput, Blogs, Blog, SignUp, MyBusiness, Categories, Categori, Product , Reset, Profil, ProfilChange, Entercode , CreateStore} from './pages'
+import { Home, ProductInput, Blogs, Blog, SignUp , Categories, Categori, Product , Reset, Profil, ProfilChange, Entercode , CreateStore , Store , Products} from './pages'
 
 class App extends Component {
 	state = {
@@ -19,7 +21,15 @@ class App extends Component {
         categoryApi.getCategory()
             .then( res => {
                 this.props.setCategory(res.data.categoryList)
-                this.setState({ isRequest : false });
+                storeApi.getStores()
+                    .then( res =>{
+                        this.props.setStores(res.data);
+                        productApi.getroducts()
+                            .then( res =>{
+                                this.props.setProducts(res.data);
+                                this.setState({ isRequest : false });
+                            })
+                    })
             })
     }
 
@@ -40,8 +50,8 @@ class App extends Component {
                             <Route exact path='/product-input'  component={ProductInput} />
                             <Route exact path='/blogs/'  component={Blogs} />
                             <Route exact path='/blogs/:id'  component={Blog} />
-                            <Route exact path='/my-business'  component={MyBusiness} />
                             <Route exact path='/sign-up' component={SignUp} />
+                            <Route exact path='/products' component={ Products }/>
                             <Route exact path='/products/:id' exact component={Product} />
                             <Route exact path='/all-categories'  component={Categories} />
                             <Route exact path='/categori'  component={Categori} />
@@ -50,6 +60,7 @@ class App extends Component {
                             <Route exact path='/resetpassword' component={Reset}/>
                             <Route exact path='/entercode' component={Entercode}/>
                             <Route exact path='/profile/createStore' component={ CreateStore }/>
+                            <Route exact path='/market' component={ Store }/>
                         </Layout>
                     </Switch>
                 </div>
@@ -64,6 +75,12 @@ const mstp = state => (state);
 const mdtp = dispatch => ({
     setCategory : (data) => {
         dispatch({ type : "setCategory" , payload : data })
+    },
+    setStores : (data) => {
+        dispatch({type : "setStores", payload : data})
+    },
+    setProducts : data =>{
+        dispatch({type : "setProducts" , payload : data})
     }
 })
 export default connect(mstp,mdtp)(App);

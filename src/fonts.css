@@ -18,3 +18,120 @@
 .row{
     margin: 0px !important;
 }
+
+*{
+    outline: none !important;
+    scroll-behavior: smooth;
+}
+a.active{
+    background: lightgray !important;
+    color: royalblue !important;
+}
+
+
+.boleft{
+    border-right: 1px solid lightgray !important;
+}
+@media(max-width:767px){
+    
+    .minmd-bt{
+        border-top: 1px solid lightgray;
+    }
+
+    .boleft{
+        border: none !important;
+    }
+}
+
+.dropdown-menu-right{
+    margin-top: 10px;
+    transition: .3s !important;
+}
+
+.dropdown-menu-right::after{
+    content: " ";
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-style: solid !important;
+    border-color: transparent  transparent  white transparent ;
+    border-width: 10px !important;
+    top: -20px;
+    display: block;
+    right:15%;
+    filter: drop-shadow(0px -1px 0px rgba(0,0,0,0.2));
+    -webkit-filter: drop-shadow(0px -1px 0px rgba(0,0,0,0.2));
+    transform: rotateY(40deg) !important;
+}
+
+a.dropdown-item{
+    font-size: 14px !important;
+    display: block;
+    transition: .3s;
+}
+
+div.ql-editor:focus{
+    border: 1px solid lightskyblue !important;
+    box-shadow: 0 3px 3px -3px lightskyblue !important;
+}
+
+.slick-slide:active{
+    cursor: grabbing !important;
+}
+
+.page_title{
+    font-family: Bold;
+    font-size: 25px;
+    font-variant: small-caps;
+    margin-bottom: 10px;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.page_title::before{
+    position: absolute;
+    content:  " ";
+    height: 3px;
+    width: 70px;
+    bottom: 0px;
+    left: 0px;
+    background-color: #4E7DF1 ;
+}
+.form-group{
+    margin: 10px 0px !important;
+}
+
+.form-group label{
+    font-variant: small-caps;
+    margin-bottom: 10px;
+}
+
+.btn-pagination{
+    border: 1px solid #4E7DF1;
+    background: #4E7DF1;
+    color: white;
+    font-family: Regular;
+    padding: 5px 10px;
+    border-radius: 100px;
+    margin: 0px 10px;
+    cursor: pointer;
+}
+
+.nav-tabs a.nav-link.active{
+    background: transparent !important;
+    color: #4E7DF1 !important;
+}
+
+.nav-tabs{
+    display: flex !important;
+    justify-content: space-around !important;
+    border-bottom: 1px solid lightgray !important;
+}
+.nav-tabs a{
+    border: none !important;
+    font-size: 20px;
+    font-variant: small-caps;
+    text-transform: lowercase;
+    font-weight: 800;
+    color: black !important;
+}

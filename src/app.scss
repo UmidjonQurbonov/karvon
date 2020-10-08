@@ -1,7 +1,6 @@
 @import "~slick-carousel/slick/slick.css"; 
 @import "~slick-carousel/slick/slick-theme.css";
 
-
 *,
 *::after,
 *::before{
@@ -10,7 +9,9 @@
 	box-sizing: border-box;
 }
 
-
+a{
+    text-decoration: none !important;
+}
 
 html{
     font-size:62.5%;  //100% -> 16px -> 1rem,10/16 ->  62.5% -> 10px;
@@ -34,7 +35,7 @@ body{
 	font-size:1.4rem;
 	font-weight:400;
     font-family: 'Montserrat', sans-serif;
-    background: #F8F8F8;
+    background: rgba(243, 239, 239, 0.959) !important;
 }
 
 
@@ -66,4 +67,8 @@ button{
 
 .sign_in_close{
     display:none !important;
+}
+
+.page_title{
+    font-family: Bold !important;
 }
