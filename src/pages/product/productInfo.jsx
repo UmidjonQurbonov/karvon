@@ -127,6 +127,7 @@ function ProductWithAction(props){
                         <button className={st.sendMessage}> <i className="fa fw fa-paper-plane"></i> Xabar jo'natish</button>
                     </div>
                 </div>
+<<<<<<< HEAD
                 <div className="row">
                     <div className="col-12 mt-5">
                         <ul className="nav nav-tabs py-3"role="tablist">
@@ -148,6 +149,62 @@ function ProductWithAction(props){
                         <div className="tab-content">
                             <div className="tab-pane fade active show" id="offer">
                                 <h1>Takliflar</h1>
+=======
+                <hr/>
+            </div>
+        )
+    });
+
+    return (
+
+        <div className={cx(s.product, 'mt-3')}>
+            <div className={cx('container')}>
+                <div className={cx(s.header, 'row')}>
+                    <div className={cx(' col-md-4 col-sm-6 col-12 mx-0')}>
+                        <div className={cx(s.brends, 'row')}>
+                            <div className={cx('col-12')}>
+                                <div className={cx("row")}>
+                                    <div className={cx(s.brends_header, "col-12")}>
+                                        <div className={cx(s.brends_header_title)}>
+                                        <span className={cx('text-uppercase')}>
+                                    Маркирани оферти
+                                        </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {brendsView}
+                        </div>
+                    </div>
+                    <div className={cx('col-md-8 col-sm-6  mt-4  mx-sm-0  mt-sm-0 col-12', s.col)}>
+                        <div className={cx(s.history, 'text-muted')}>
+                            <span>Тук сте: </span>
+                            <span>
+                                <NavLink to={'/'}>Начало</NavLink>
+                                {historyView}
+                            </span>
+                        </div>
+                        <div className={cx('row mt-4')}>
+                            <div className={cx(s.carousel,"col-xl-6 col-md-6 col-sm-12 col-12 w-100 mb-sm-4")}>
+                                <div id="myCarousel" className={"carousel slide"} data-ride="carousel">
+                                    <div className={"carousel-inner"}>
+                                        {productCarouselView}
+                                    </div>
+                                    <a className={"carousel-control-prev"} href="#carouselExampleControls" role="button"
+                                       data-slide="prev" data-target="#myCarousel">
+                                        <div className={cx(s.carouselButton)}>
+                                            <i className={'fas fa-chevron-left'}></i>
+                                        </div>
+                                    </a>
+                                    <a className={"carousel-control-next"} href="#carouselExampleControls" role="button"
+                                       data-slide="next" data-target="#myCarousel">
+                                        <div className={cx(s.carouselButton)}>
+                                            <i className='fas fa-chevron-right'>
+                                            </i>
+                                        </div>
+                                    </a>
+                                </div>
+>>>>>>> d2785c5304b2c980a36c3e903cf299a1590aa6d0
                             </div>
                             <div className="tab-pane fade" id="info">
                                 {
