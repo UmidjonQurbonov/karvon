@@ -160,8 +160,9 @@ function ProductWithAction(props){
                                 }
                             </div>
                             <div className="tab-pane fade" id="comments">
+                                <h4>Fikr bildiring</h4>
                                 <form className={st.comment} onSubmit={ makeComment }>
-                                    <h4>Fikr bildiring</h4>
+                                    
                                     <div className="form-group">
                                         <label htmlFor="rate">Maxsulotga baho bering</label>
                                         <ReactStars

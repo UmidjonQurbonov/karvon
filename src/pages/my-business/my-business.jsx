@@ -9,6 +9,7 @@ import ProductRadius from "./product_radius/product_radius.jsx";
 import img from "../../img/radius1.jpg";
 import img1 from "../../img/radius2.jpg";
 import SidebarNews from "./sidebar/sidebarNews";
+import addproduct from './../../img/add_product.png'
 import { NavLink} from "react-router-dom";
 
 
@@ -106,8 +107,8 @@ const Links = () => {
     const addProduct = (
     <div className={cx('col-lg-3 col-md-6 col-sm-6 col-xs-6 col-12 pl-md-0 ml-xs-5 ml-md-0')}>
         <div className={cx(st.add_card,'text-center py-5')}>
-        <div className={cx(st.add_icon,'mt-3')}>
-            <i className={cx('fas fa-plus fa-5x')}></i>
+        <div className={cx(st.add_icon,'mt-3  w-100 ')}>
+            <img src={addproduct} className={cx('w-100 ')} alt="add_product"/>
         </div>
         <div className={cx(st.add_title, 'py-3 pb-4')}>
             <a href='#' className={cx(st.add_title_link)}>Add product</a>
@@ -168,6 +169,9 @@ const Links = () => {
                         {addProduct}
                     </div>
 
+                </div>
+                <div className={cx('col-md-3 col-sm-12 row')}>
+                    {cards}
                 </div>
             </div>
         </div>
